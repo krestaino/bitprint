@@ -1,0 +1,40 @@
+{
+  "name": "monostack",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write '**/*.{css,js,json,md}'",
+    "setup": "yarn install && node tasks/setup.js",
+    "setup:server": "yarn --cwd server/ install",
+    "setup:client": "yarn --cwd client/ install",
+    "start": "dotenv -e .env concurrently \"yarn start:server\" \"yarn start:client\"",
+    "start:server": "yarn --cwd server/ start",
+    "start:client": "yarn --cwd client/ start",
+    "build": "dotenv -e .env node tasks/build.js",
+    "build:server": "yarn --cwd server/ build",
+    "build:client": "yarn --cwd client/ build",
+    "serve": "set NODE_ENV=production && dotenv -e .env concurrently \"yarn serve:server\" \"yarn serve:client\"",
+    "serve:server": "yarn --cwd server/ serve",
+    "serve:client": "yarn --cwd client/ serve"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0",
+    "consola": "^2.11.0",
+    "dotenv-cli": "^3.0.0",
+    "execa": "^3.3.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.19.1"
+  }
+}

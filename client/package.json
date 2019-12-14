@@ -1,0 +1,41 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm-run-all -p start:css start:js",
+    "build": "npm-run-all build:css build:js",
+    "start:js": "react-scripts start",
+    "build:js": "react-scripts build",
+    "start:css": "postcss src/index.css -o public/index.min.css -w",
+    "build:css": "postcss src/index.css -o public/index.min.css --env production",
+    "serve": "node serve.js"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "serve-handler": "^6.1.2",
+    "tailwindcss": "^1.1.3"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^1.3.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.1.3"
+  }
+}
