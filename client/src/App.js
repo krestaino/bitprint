@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import csv from 'csvtojson';
 
 import packageJson from '../package.json';
+import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
 import Intro from './components/Intro.js';
@@ -179,8 +180,9 @@ export default class App extends Component {
                 'flex justify-between items-center flex-col md:flex-row': true
               })}
             >
-              <h1 className="font-hairline text-2xl md:text-3xl mb-4 md:-mb-2 -m-1">
-                Bitwarden Print
+              <h1 className="font-hairline text-2xl md:text-3xl mb-4 md:-mb-2 -m-1 flex items-center">
+                <PrintIcon className="h-6 mr-2" />
+                <span>BitPrint</span>
               </h1>
               <div className="flex items-center">
                 <span className="flex items-center font-bold uppercase text-sm mr-4 slide-in-left">
@@ -323,11 +325,11 @@ export default class App extends Component {
               <div className="container flex">
                 <span className="ml-auto inline-flex p-8 pb-8 slide-in-bottom">
                   <button
-                    className="btn -lg -active shadow-md"
+                    className="btn -rounded -lg -active shadow-md flex items-center"
                     onClick={() => window.print()}
                     style={{ pointerEvents: 'all' }}
                   >
-                    Print
+                    <PrintIcon className="h-4 mr-2" /> Print
                   </button>
                 </span>
               </div>
@@ -430,7 +432,12 @@ export default class App extends Component {
         <footer className="text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4 no-print">
           <span>v{packageJson.version}</span>
           <span> – </span>
-          <a className="font-bold" href={packageJson.repository.url} target="_blank">
+          <a
+            className="font-bold"
+            href={packageJson.repository.url}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             GitHub
           </a>
         </footer>

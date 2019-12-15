@@ -98,6 +98,10 @@ li {
   @apply px-6 py-4 text-sm;
 }
 
+.btn.-rounded {
+  @apply rounded-full;
+}
+
 .-active .btn,
 .-active.btn {
   @apply bg-blue-500 text-white;

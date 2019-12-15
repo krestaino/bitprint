@@ -1,11 +1,11 @@
 {
-  "name": "bitwarden-print",
-  "description": "Print your Bitwarden backups.",
-  "version": "1.2.0",
+  "name": "bitprint",
+  "description": "Print your Bitwarden exports.",
+  "version": "1.3.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/krestaino/bitwarden-print.git"
+    "url": "https://github.com/krestaino/bitprint.git"
   },
   "scripts": {
     "format": "prettier --write '**/*.{css,js,json,md}'",

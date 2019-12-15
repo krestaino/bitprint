@@ -16,10 +16,10 @@ export default class Intro extends Component {
             What is this?
           </h2>
           <p>
-            <strong>Bitwarden Print</strong> provides you an easy way to import your vault exports
-            into a format which is designed to be printed. Everything is handled in the browser,
-            your data does not go anywhere. That said, I would not trust this without reviewing the{' '}
-            <a href={packageJson.repository.url}>source</a>.
+            <strong>BitPrint</strong> provides you an easy way to import your Bitwarden vault
+            exports into a layout which is designed to be printed. Everything is handled in the
+            browser, your data does not go anywhere. That said, I would not trust this without
+            reviewing the <a href={packageJson.repository.url}>source</a>.
           </p>
           <p className="mt-4">
             <strong className="font-bold">

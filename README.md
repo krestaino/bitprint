@@ -1,14 +1,14 @@
-# Bitwarden Print
+# BitPrint
 
-**Bitwarden Print** provides you an easy way to import your vault exports into a format which is designed to be printed. Everything is handled in the browser, your data does not go anywhere.
+**BitPrint** provides you an easy way to import your Bitwarden vault exports into a layout which is designed to be printed. Everything is handled in the browser, your data does not go anywhere.
 That said, I would not trust this without reviewing the source.
 
 **It's highly recommended to clone the repo and run it yourself.**
 
 ## Demo
 
-- https://bitwarden-print.kmr.io/?demo
-- https://bitwarden-print.kmr.io/demo.pdf
+- https://bitprint.kmr.io/?demo
+- https://bitprint.kmr.io/demo.pdf
 
 ## Requirements
 
