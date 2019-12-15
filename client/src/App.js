@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import csv from 'csvtojson';
 
 import packageJson from '../package.json';
+import { ReactComponent as FrownOpenIcon } from './assets/frown-open.svg';
 import { ReactComponent as FileImportIcon } from './assets/file-import.svg';
 import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
@@ -330,6 +331,12 @@ export default class App extends Component {
               </div>
             </div>
             <ul className="leading-snug">
+              {foldersToPrint.length === 0 && data.folders.length !== 0 && (
+                <li className="text-center py-40 text-sm text-gray-500">
+                  <FrownOpenIcon className="h-4 mx-auto mb-2" />
+                  <div>Nothing to see here.</div>
+                </li>
+              )}
               {data.items.map(
                 ({ fields, folderId, login, name, notes, type }, index) =>
                   type === 1 && (
