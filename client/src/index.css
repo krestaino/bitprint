@@ -12,3 +12,7 @@
 li {
   page-break-inside: avoid;
 }
+
+.comma-list > *:not(:last-child)::after {
+  content: ',\00a0';
+}

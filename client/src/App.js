@@ -75,12 +75,14 @@ export default class App extends Component {
                   {Object.keys(dataToPrint).map(option => (
                     <li key={option}>
                       <input
-                        name={option}
+                        id={option}
                         type="checkbox"
                         checked={dataToPrint[option]}
                         onChange={() => this.toggleDataOption(option)}
                       />
-                      <span className="capitalize">{option}</span>
+                      <label for={option} className="capitalize">
+                        {option}
+                      </label>
                     </li>
                   ))}
                 </ul>
@@ -90,12 +92,12 @@ export default class App extends Component {
                   {data.folders.map(({ id, name }) => (
                     <li key={id}>
                       <input
-                        name={id}
+                        id={id}
                         type="checkbox"
                         checked={foldersToPrint.includes(id)}
                         onChange={() => this.toggleFolder(id)}
                       />
-                      <span>{name}</span>
+                      <label for={id}>{name}</label>
                     </li>
                   ))}
                 </ul>
@@ -112,7 +114,17 @@ export default class App extends Component {
                   <span>Logins – {this.getPrintItemLength()}</span>
                 </div>
                 <div className="flex justify-between items-baseline">
-                  <span>Data – Username, Password, TOTP</span>
+                  <span>
+                    <span>Data – </span>
+                    <span className="comma-list">
+                      {Object.keys(dataToPrint).map(
+                        option =>
+                          dataToPrint[option] && (
+                            <span className="inline-block capitalize">{option}</span>
+                          )
+                      )}
+                    </span>
+                  </span>
                   <span>{lastModified}</span>
                 </div>
               </div>
