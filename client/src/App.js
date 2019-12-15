@@ -83,6 +83,7 @@ export default class App extends Component {
 
   resetState = () => {
     document.querySelector('input[type=file]').value = null;
+    window.history.pushState(null, null, '/');
     this.setState({ ...initialState });
   };
 
@@ -102,7 +103,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {
-    if (window.location.pathname.includes('demo')) {
+    if (window.location.search.includes('demo')) {
       this.demoData();
     }
   }
@@ -142,7 +143,7 @@ export default class App extends Component {
                     <label className="label">Selected folders</label>
                     <ul className="flex mr-8">
                       {data.folders.map(({ id, name }) => (
-                        <li className={foldersToPrint.includes(id) && 'active'} key={id}>
+                        <li className={foldersToPrint.includes(id) && '-active'} key={id}>
                           <input
                             checked={foldersToPrint.includes(id)}
                             className="hidden"
@@ -163,7 +164,7 @@ export default class App extends Component {
                   <label className="label">Selected data</label>
                   <ul className="flex">
                     {Object.keys(dataToPrint).map(option => (
-                      <li className={dataToPrint[option] && 'active'} key={option}>
+                      <li className={dataToPrint[option] && '-active'} key={option}>
                         <input
                           checked={dataToPrint[option]}
                           className="hidden"
@@ -230,6 +231,15 @@ export default class App extends Component {
                     </span>
                   </span>
                   <span>{this.formatDate(file.lastModified)}</span>
+                </div>
+              </div>
+              <div className="fixed bottom-0 right-0 w-full no-print">
+                <div className="container flex">
+                  <span className="ml-auto inline-flex p-8 slide-in-bottom">
+                    <button className="btn -lg -active shadow-md" onClick={() => window.print()}>
+                      Print
+                    </button>
+                  </span>
                 </div>
               </div>
               <ul>

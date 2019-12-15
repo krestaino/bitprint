@@ -9,7 +9,7 @@
   }
 }
 
-@keyframes slideInFromLeft {
+@keyframes slideInLeft {
   0% {
     opacity: 0;
     transform: translateX(-50%);
@@ -20,8 +20,23 @@
   }
 }
 
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .slide-in-left {
-  animation: 1s 0s 1 slideInFromLeft;
+  animation: 1s 0s 1 slideInLeft;
+}
+
+.slide-in-bottom {
+  animation: 1s 0s 1 slideInBottom;
 }
 
 a {
@@ -47,11 +62,18 @@ li {
 .btn:hover {
   @apply bg-gray-300 text-gray-800;
 }
-.active .btn {
+
+.btn.-lg {
+  @apply px-6 py-4 text-sm;
+}
+
+.-active .btn,
+.-active.btn {
   @apply bg-blue-500 text-white;
 }
 
-.active .btn:hover {
+.-active .btn:hover,
+.-active.btn:hover {
   @apply bg-blue-600;
 }
 
