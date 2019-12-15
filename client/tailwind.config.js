@@ -4,5 +4,8 @@ module.exports = {
       mono: ['Ubuntu Mono', 'monospace'],
       body: ['Ubuntu', 'sans-serif']
     }
+  },
+  variants: {
+    borderColor: ['focus']
   }
 };

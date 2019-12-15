@@ -124,6 +124,10 @@ li {
   width: 50%;
 }
 
+.focus\:shadow-outline:focus {
+  box-shadow: 0 0 0 3px #4299e1;
+}
+
 input[type='file'] {
   @apply cursor-pointer;
 

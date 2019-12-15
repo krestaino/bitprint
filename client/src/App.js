@@ -293,9 +293,7 @@ export default class App extends Component {
                     event.target.blur()
                   }
                   contenteditable="true"
-                  className={classNames({
-                    'min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex': true
-                  })}
+                  className="focus:shadow-outline focus:border-transparent outline-none px-1 -ml-1 rounded min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex"
                   style={{ minWidth: '185px' }}
                   title="Edit title"
                 >
