@@ -15,7 +15,7 @@ export default class Intro extends Component {
           <p>
             <strong>Bitwarden Print</strong> aims to provide a convenient format to print your
             Bitwarden backups. Everything is handled in the browser, your data does not go anywhere.
-            That said, I would not trust this if without reviewing the <a href="/">source</a>.
+            That said, I would not trust this without reviewing the <a href="/">source</a>.
           </p>
           <p className="mt-4">
             <strong className="font-bold">
