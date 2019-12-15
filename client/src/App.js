@@ -97,7 +97,7 @@ export default class App extends Component {
     return (
       <main className="font-body">
         <div className="bg-gray-900 no-print text-white sticky top-0">
-          <div className="container py-8 relative">
+          <div className="container pb-8 pt-6 relative">
             <div className="flex justify-between">
               <h1
                 className={classNames({
@@ -210,90 +210,96 @@ export default class App extends Component {
                 </div>
               </div>
               <ul>
-                {data.items.map(({ fields, folderId, login, name, notes }, index) => (
-                  <li
-                    className={classNames({
-                      hidden: (data.folders.length && !foldersToPrint.includes(folderId)) || false,
-                      'bg-gray-200 border border-gray-400 rounded mt-4 break-words': true
-                    })}
-                    key={index}
-                  >
-                    <div className="px-4 py-2 font-bold flex items-center">
-                      <img
-                        alt={name}
+                {data.items.map(
+                  ({ fields, folderId, login, name, notes, type }, index) =>
+                    type === 1 && (
+                      <li
                         className={classNames({
-                          hidden: !dataToPrint['logos'],
-                          'inline-block mr-2 h-5': true
+                          hidden:
+                            (data.folders.length && !foldersToPrint.includes(folderId)) || false,
+                          'bg-gray-200 border border-gray-400 rounded mt-4 break-words': true
                         })}
-                        src={`https://icons.bitwarden.net/${
-                          new URL(login.uris[0].uri).hostname
-                        }/icon.png`}
-                      />
-                      <span>{name}</span>
-                    </div>
-                    {login && (
-                      <div>
-                        {login.username && (
-                          <div
-                            className={classNames({
-                              hidden: !dataToPrint['username'],
-                              'px-4 py-2 border-t border-gray-400': true
-                            })}
-                          >
-                            <span className="text-gray-500">U – </span>
-                            <span className="font-mono">{login.username}</span>
-                          </div>
-                        )}
-                        {login.password && (
-                          <div
-                            className={classNames({
-                              hidden: !dataToPrint['password'],
-                              'px-4 py-2 border-t border-gray-400': true
-                            })}
-                          >
-                            <span className="text-gray-500">P – </span>
-                            <span className="font-mono">{login.password}</span>
-                          </div>
-                        )}
-                        {login.totp && (
-                          <div
-                            className={classNames({
-                              hidden: !dataToPrint['totp'],
-                              'px-4 py-2 border-t border-gray-400': true
-                            })}
-                          >
-                            <span className="text-gray-500">T – </span>
-                            <span className="font-mono">{login.totp}</span>
-                          </div>
-                        )}
-                        {notes && (
-                          <div
-                            className={classNames({
-                              hidden: !dataToPrint['notes'],
-                              'px-4 py-2 border-t border-gray-400': true
-                            })}
-                          >
-                            <span className="text-gray-500">N – </span>
-                            <span className="font-mono">{notes}</span>
-                          </div>
-                        )}
-                        {fields &&
-                          fields.map((field, index) => (
-                            <div
+                        key={index}
+                      >
+                        <div className="px-4 py-2 font-bold flex items-center">
+                          {login && login.uris && console.log(login.uris) && (
+                            <img
+                              alt={name}
                               className={classNames({
-                                hidden: !dataToPrint['fields'],
-                                'px-4 py-2 border-t border-gray-400': true
+                                hidden: !dataToPrint['logos'],
+                                'inline-block mr-2 h-5': true
                               })}
-                              key={index}
-                            >
-                              <span className="text-gray-500">{field.name} – </span>
-                              <span className="font-mono">{field.value}</span>
-                            </div>
-                          ))}
-                      </div>
-                    )}
-                  </li>
-                ))}
+                              src={`https://icons.bitwarden.net/${
+                                new URL(login.uris[0].uri).hostname
+                              }/icon.png`}
+                            />
+                          )}
+                          <span>{name}</span>
+                        </div>
+                        {login && (
+                          <div>
+                            {login.username && (
+                              <div
+                                className={classNames({
+                                  hidden: !dataToPrint['username'],
+                                  'px-4 py-2 border-t border-gray-400': true
+                                })}
+                              >
+                                <span className="text-gray-500">U – </span>
+                                <span className="font-mono">{login.username}</span>
+                              </div>
+                            )}
+                            {login.password && (
+                              <div
+                                className={classNames({
+                                  hidden: !dataToPrint['password'],
+                                  'px-4 py-2 border-t border-gray-400': true
+                                })}
+                              >
+                                <span className="text-gray-500">P – </span>
+                                <span className="font-mono">{login.password}</span>
+                              </div>
+                            )}
+                            {login.totp && (
+                              <div
+                                className={classNames({
+                                  hidden: !dataToPrint['totp'],
+                                  'px-4 py-2 border-t border-gray-400': true
+                                })}
+                              >
+                                <span className="text-gray-500">T – </span>
+                                <span className="font-mono">{login.totp}</span>
+                              </div>
+                            )}
+                            {notes && (
+                              <div
+                                className={classNames({
+                                  hidden: !dataToPrint['notes'],
+                                  'px-4 py-2 border-t border-gray-400': true
+                                })}
+                              >
+                                <span className="text-gray-500">N – </span>
+                                <span className="font-mono">{notes}</span>
+                              </div>
+                            )}
+                            {fields &&
+                              fields.map((field, index) => (
+                                <div
+                                  className={classNames({
+                                    hidden: !dataToPrint['fields'],
+                                    'px-4 py-2 border-t border-gray-400': true
+                                  })}
+                                  key={index}
+                                >
+                                  <span className="text-gray-500">{field.name} – </span>
+                                  <span className="font-mono">{field.value}</span>
+                                </div>
+                              ))}
+                          </div>
+                        )}
+                      </li>
+                    )
+                )}
               </ul>
             </div>
           )}
