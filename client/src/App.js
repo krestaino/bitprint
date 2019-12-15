@@ -235,7 +235,7 @@ export default class App extends Component {
 
                   <div
                     className={classNames({
-                      'mt-4 lg:mt-auto flex-1 lg:pl-8 xl:px-8': true,
+                      'lg:mt-auto flex-1 lg:pl-8 xl:px-8': true,
                       'lg:-ml-8': data.folders.length === 0
                     })}
                   >
@@ -272,7 +272,7 @@ export default class App extends Component {
                     </ul>
                   </div>
                 </div>
-                <div className="xl:ml-auto mt-4 xl:mt-auto flex flex-col ">
+                <div className="xl:ml-auto xl:mt-auto flex flex-col lg:mt-4">
                   {file.name && (
                     <Fragment>
                       {file.size > 0 && <label className="label">Vault</label>}
