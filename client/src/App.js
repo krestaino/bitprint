@@ -198,15 +198,15 @@ export default class App extends Component {
             </div>
             {data.items.length > 0 && (
               <div className="flex flex-col xl:flex-row -mt-2">
-                <div className="flex flex-col lg:flex-row">
+                <div className="flex flex-col lg:flex-row flex-1">
                   {data.folders.length > 0 && (
                     <div className="xl:mt-auto">
                       <label className="label">Selected folders</label>
-                      <ul className="flex lg:mr-8 flex-wrap -mt-4 -mx-2 sm:mx-0">
+                      <ul className="flex flex-wrap -mx-2">
                         {data.folders.map(({ id, name }) => (
                           <li
                             className={classNames({
-                              'mt-4 w-half sm:w-auto px-2 sm:px-0': true,
+                              'mb-4 flex-1 px-2 lg:mb-0': true,
                               '-active': foldersToPrint.includes(id)
                             })}
                             key={id}
@@ -218,7 +218,7 @@ export default class App extends Component {
                               onChange={() => this.toggleFolder(id)}
                               type="checkbox"
                             />
-                            <label className="btn mr-4 w-full sm:w-auto" htmlFor={id}>
+                            <label className="btn w-full" htmlFor={id}>
                               {name}
                             </label>
                           </li>
@@ -227,13 +227,13 @@ export default class App extends Component {
                     </div>
                   )}
 
-                  <div className="mt-4 lg:mt-auto">
+                  <div className="mt-4 lg:mt-auto flex-1 lg:pl-8 xl:px-8">
                     <label className="label">Selected data</label>
-                    <ul className="flex flex-wrap -mt-4 -mx-2 sm:mx-0">
+                    <ul className="flex flex-wrap -mx-2">
                       {dataToPrintKeys.map(option => (
                         <li
                           className={classNames({
-                            'mt-4 w-half sm:w-auto px-2 sm:px-0': true,
+                            'mb-4 flex-1 px-2 lg:mb-0': true,
                             '-active': dataToPrint[option]
                           })}
                           key={option}
@@ -245,7 +245,7 @@ export default class App extends Component {
                             onChange={() => this.toggleDataOption(option)}
                             type="checkbox"
                           />
-                          <label className="btn mr-4 w-full sm:w-auto" htmlFor={option}>
+                          <label className="btn w-full" htmlFor={option}>
                             {option}
                           </label>
                         </li>
