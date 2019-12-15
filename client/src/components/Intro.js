@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import packageJson from '../../package.json';
 import Step1 from '../assets/step-1.png';
 import Step2 from '../assets/step-2.png';
 import Step3 from '../assets/step-3.png';
@@ -16,8 +15,15 @@ export default class Intro extends Component {
             What is this?
           </h2>
           <p className="mb-4">
-            <strong>BitPrint</strong> provides you an easy way to import your Bitwarden vault into a
-            layout which is designed to be printed. Processing is handled client side.
+            <strong>BitPrint</strong> turns an{' '}
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://help.bitwarden.com/article/export-your-data/"
+            >
+              exported Bitwarden vault
+            </a>{' '}
+            into a layout which is designed to be printed. Processing is handled client side.
           </p>
           <p className="mb-4">
             I would not trust using this for personal use. I made this for myself, more as of a
@@ -30,7 +36,7 @@ export default class Intro extends Component {
               <a className="font-bold" href="/?demo">
                 demo
               </a>
-              .
+              , your own fake data, or fork the repo and run it yourself.
             </strong>
           </p>
         </section>
@@ -55,6 +61,18 @@ export default class Intro extends Component {
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
             How do I get my vault export?
           </h2>
+          <ul className="list-disc ml-4">
+            <li>
+              <a
+                className="mb-4 inline-block"
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://help.bitwarden.com/article/export-your-data/"
+              >
+                https://help.bitwarden.com/article/export-your-data/
+              </a>
+            </li>
+          </ul>
           <ol className="flex flex-col md:flex-row justify-center flex-wrap text-center md:-mt-8 flex-1 -mx-4">
             <li className="md:mt-6 flex-1">
               <div className="p-4">

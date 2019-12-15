@@ -1,13 +1,10 @@
 # BitPrint
 
-**BitPrint** provides you an easy way to import your Bitwarden vault into a
-layout which is designed to be printed. Processing is handled client side.
+**BitPrint** turns an [exported Bitwarden vault](https://help.bitwarden.com/article/export-your-data/) into a layout which is designed to be printed. Processing is handled client side.
 
-I would not trust using this for personal use. I made this for myself, more as of a
-proof of concept than something meant to be shared. Always be cautious when dealing with
-your exported vault.
+I would not trust using this for personal use. I made this for myself, more as of a proof of concept than something meant to be shared. Always be cautious when dealing with your exported vault.
 
-**TL;DR: Do not upload your personal vault on the demo site.**
+**TL;DR: Do not import your personal vault on my site. Use the [demo](https://bitprint.kmr.io/?demo), your own fake data, or fork the repo and run it yourself.**
 
 ![Screenshot](.github/screenshot.png)
 
@@ -77,3 +74,7 @@ $ yarn build
 ```
 $ yarn serve
 ```
+
+## How do I get my vault export?
+
+https://help.bitwarden.com/article/export-your-data/
