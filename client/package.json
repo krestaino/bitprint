@@ -1,7 +1,12 @@
 {
   "name": "client",
+  "description": "Print your Bitwarden backups.",
   "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krestaino/bitwarden-print.git"
+  },
   "scripts": {
     "start": "npm-run-all -p start:css start:js",
     "build": "npm-run-all build:css build:js",
@@ -26,6 +31,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
+    "csvtojson": "^2.0.10",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0",

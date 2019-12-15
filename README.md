@@ -1,15 +1,4 @@
-# Monostack
-
-Bootstrap a fullstack React and Express app in seconds.
-
-**Features**
-
-- React 16, Express 4, and Tailwind CSS
-- Single commands to start, build, and serve the client and server
-- Shared environment variables
-- Babel to write ES6 everywhere
-- Prettier with Husky enabled on pre-commits
-- Hot reloading for the client and server
+# Bitwarden Print
 
 ## Requirements
 
@@ -26,6 +15,15 @@ $ yarn start
 Navigate to http://localhost:3000.
 
 ## Development
+
+**Features**
+
+- React 16, Express 4, and Tailwind CSS
+- Single commands to start, build, and serve the client and server
+- Shared environment variables
+- Babel to write ES6 everywhere
+- Prettier with Husky enabled on pre-commits
+- Hot reloading for the client and server
 
 **Setup Project**
 

@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
+import csv from 'csvtojson';
 
+import packageJson from '../package.json';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
 import Intro from './components/Intro.js';
@@ -73,10 +75,65 @@ export default class App extends Component {
     const file = event.target.files[0];
 
     reader.onload = event => {
-      const data = JSON.parse(event.target.result);
-      const foldersToPrint = data.folders.map(({ id }) => id);
+      if (file.type === 'application/json') {
+        const data = JSON.parse(event.target.result);
+        const foldersToPrint = data.folders.map(({ id }) => id);
 
-      this.setState({ data, file, foldersToPrint });
+        this.setState({ data, file, foldersToPrint });
+      }
+
+      if (file.type === 'text/csv') {
+        csv()
+          .fromString(event.target.result)
+          .then(csvRow => {
+            const onlyUnique = (value, index, self) => {
+              return self.indexOf(value) === index;
+            };
+
+            console.log(
+              csvRow
+                .map(item => item.folder)
+                .filter(onlyUnique)
+                .filter(item => item !== '')
+            );
+
+            const foldersToPrint = csvRow
+              .map(item => item.folder)
+              .filter(onlyUnique)
+              .filter(item => item !== '');
+            const folders = foldersToPrint.map(item => ({ id: item, name: item }));
+
+            const items = csvRow.map(item => ({
+              fields: [
+                {
+                  name: '',
+                  value: item.fields
+                }
+              ],
+              folderId: item.folder,
+              name: item.name,
+              notes: item.notes,
+              login: {
+                username: item.login_username,
+                password: item.login_password,
+                totp: item.login_totp,
+                uris: [
+                  {
+                    match: null,
+                    uri: item.login_uri
+                  }
+                ]
+              },
+              type: 1
+            }));
+
+            const data = { folders, items };
+
+            console.log(data, file, foldersToPrint);
+
+            this.setState({ data, file, foldersToPrint });
+          });
+      }
     };
     reader.readAsText(file);
   };
@@ -112,7 +169,7 @@ export default class App extends Component {
     const { dataToPrint, foldersToPrint, data, file } = this.state;
 
     return (
-      <main className="font-body">
+      <main className="font-body h-screen flex flex-col">
         <div className="bg-gray-900 no-print text-white sticky top-0">
           <div className="container py-6 xl:py-8 xl:pt-6 relative">
             <div
@@ -235,7 +292,7 @@ export default class App extends Component {
               </div>
               <div className="fixed bottom-0 right-0 w-full no-print">
                 <div className="container flex">
-                  <span className="ml-auto inline-flex p-8 slide-in-bottom">
+                  <span className="ml-auto inline-flex p-8 pb-24 slide-in-bottom">
                     <button className="btn -lg -active shadow-md" onClick={() => window.print()}>
                       Print
                     </button>
@@ -325,7 +382,9 @@ export default class App extends Component {
                                   })}
                                   key={index}
                                 >
-                                  <span className="text-gray-500">{field.name} – </span>
+                                  <span className="text-gray-500">
+                                    {field.name && field.name + ' – '}
+                                  </span>
                                   <span>{field.value}</span>
                                 </div>
                               ))}
@@ -338,6 +397,13 @@ export default class App extends Component {
             </div>
           )}
         </section>
+        <footer className="relative text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4">
+          <span>v{packageJson.version}</span>
+          <span> – </span>
+          <a className="font-bold" href={packageJson.repository.url} target="_blank">
+            GitHub
+          </a>
+        </footer>
       </main>
     );
   }
