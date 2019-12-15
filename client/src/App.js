@@ -402,7 +402,7 @@ export default class App extends Component {
             </div>
           )}
         </section>
-        <footer className="text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4">
+        <footer className="text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4 no-print">
           <span>v{packageJson.version}</span>
           <span> – </span>
           <a className="font-bold" href={packageJson.repository.url} target="_blank">

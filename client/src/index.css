@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @media print {
+  html {
+    font-size: 15px;
+  }
+
+  main {
+    @apply -mt-8;
+  }
   .no-print,
   .no-print * {
     display: none !important;
