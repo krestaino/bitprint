@@ -74,6 +74,12 @@
   animation: 1s 0s 1 slideInBottom;
 }
 
+@media (max-height: 500px) {
+  .btn.-rounded.-lg {
+    display: none !important;
+  }
+}
+
 ::selection {
   @apply text-white bg-blue-500;
 }
