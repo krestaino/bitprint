@@ -64,7 +64,7 @@ export default class App extends Component {
 
   formatDate() {
     const date = new Date(this.state.file.lastModified);
-    return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+    return date.toLocaleDateString() + ' – ' + date.toLocaleTimeString();
   }
 
   readFile = event => {

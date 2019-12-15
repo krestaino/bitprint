@@ -34,7 +34,7 @@
         ],
         "username": "demo@example.com",
         "password": "4bedd2d5ce7043b9a35c22748",
-        "totp": "159082"
+        "totp": "otpauth://totp/amazon.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -62,7 +62,7 @@
         ],
         "username": "demo@example.com",
         "password": "ff806625ce124feb8b4523d01",
-        "totp": "274781"
+        "totp": "otpauth://totp/apple.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -90,7 +90,7 @@
         ],
         "username": "demo@example.com",
         "password": "7f0760d88da74a17bb3207a91",
-        "totp": "933644"
+        "totp": "otpauth://totp/digitalocean.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -118,7 +118,7 @@
         ],
         "username": "demo@example.com",
         "password": "370bfec2de384210946ef64b6",
-        "totp": "316036"
+        "totp": "otpauth://totp/discordapp.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -146,7 +146,7 @@
         ],
         "username": "demo@example.com",
         "password": "828e6698346d49409229bcc5d",
-        "totp": "687447"
+        "totp": "otpauth://totp/firefox.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -174,7 +174,7 @@
         ],
         "username": "demo@example.com",
         "password": "974e4bd9aa014f03a0e4fdf95",
-        "totp": "580537"
+        "totp": "otpauth://totp/github.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -202,7 +202,7 @@
         ],
         "username": "demo@example.com",
         "password": "3a7d495698a4440fa783807b3",
-        "totp": "837733"
+        "totp": "otpauth://totp/google.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -230,7 +230,7 @@
         ],
         "username": "demo@example.com",
         "password": "6f981788d42e4ba4bd28b3ba4",
-        "totp": "440062"
+        "totp": "otpauth://totp/linkedin.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -258,7 +258,7 @@
         ],
         "username": "demo@example.com",
         "password": "1eb8ed24f1904f23a46c69864",
-        "totp": "256364"
+        "totp": "otpauth://totp/microsoft.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -286,7 +286,7 @@
         ],
         "username": "demo@example.com",
         "password": "2160ab440e6c4d698d63abaa0",
-        "totp": "791976"
+        "totp": "otpauth://totp/nexusmods.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -314,7 +314,7 @@
         ],
         "username": "demo@example.com",
         "password": "5b6a2d6942a841bb9940c34bc",
-        "totp": "367837"
+        "totp": "otpauth://totp/npmjs.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -342,7 +342,7 @@
         ],
         "username": "demo@example.com",
         "password": "79c88e35526945b89102ed69a",
-        "totp": "459728"
+        "totp": "otpauth://totp/plex.tv:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -370,7 +370,7 @@
         ],
         "username": "demo@example.com",
         "password": "a9d621aa9d084e5cbd748b41f",
-        "totp": "826144"
+        "totp": "otpauth://totp/reddit.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -398,7 +398,7 @@
         ],
         "username": "demo@example.com",
         "password": "9fbc2b4a89ab45c7970edd401",
-        "totp": "812280"
+        "totp": "otpauth://totp/rentpayment.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -426,7 +426,7 @@
         ],
         "username": "demo@example.com",
         "password": "7a22c947a2fe4652acd69d4ae",
-        "totp": "849807"
+        "totp": "otpauth://totp/seafile.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -454,7 +454,7 @@
         ],
         "username": "demo@example.com",
         "password": "77ed84be08254d349a83a5903",
-        "totp": "890253"
+        "totp": "otpauth://totp/sproutsocial.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -482,7 +482,7 @@
         ],
         "username": "demo@example.com",
         "password": "5b6f79f64038437ab623eb890",
-        "totp": "111772"
+        "totp": "otpauth://totp/steampowered.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -510,7 +510,7 @@
         ],
         "username": "demo@example.com",
         "password": "c777fd3cf4c742e484c7dcc24",
-        "totp": "583861"
+        "totp": "otpauth://totp/teamviewer.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -538,7 +538,7 @@
         ],
         "username": "demo@example.com",
         "password": "c8964ce35e0949ad9a2f87aa0",
-        "totp": "367532"
+        "totp": "otpauth://totp/twitch.tv:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     },
@@ -566,7 +566,7 @@
         ],
         "username": "demo@example.com",
         "password": "af28e8fad3944feeaf240108f",
-        "totp": "479033"
+        "totp": "otpauth://totp/twitter.com:Z2MVZBI16XDOCL?secret=C2N27WG3XXS7ULRC9A8PCVWF1YOAZRV26HJZ8LT50V6QA7JZ98EG"
       },
       "collectionIds": null
     }
