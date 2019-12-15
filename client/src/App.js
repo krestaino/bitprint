@@ -92,13 +92,6 @@ export default class App extends Component {
               return self.indexOf(value) === index;
             };
 
-            console.log(
-              csvRow
-                .map(item => item.folder)
-                .filter(onlyUnique)
-                .filter(item => item !== '')
-            );
-
             const foldersToPrint = csvRow
               .map(item => item.folder)
               .filter(onlyUnique)
@@ -130,8 +123,6 @@ export default class App extends Component {
             }));
 
             const data = { folders, items };
-
-            console.log(data, file, foldersToPrint);
 
             this.setState({ data, file, foldersToPrint });
           });
@@ -292,13 +283,13 @@ export default class App extends Component {
             <div className="px-4 print-fix">
               <div className="flex justify-between items-baseline">
                 <h1
-                  spellcheck="false"
-                  minlength="2"
-                  onKeyPress={event =>
+                  spellCheck="false"
+                  suppressContentEditableWarning={true}
+                  onKeyPress={event => {
                     (event.nativeEvent.keyCode === 13 || event.nativeEvent.which === 13) &&
-                    event.target.blur()
-                  }
-                  contenteditable="true"
+                      event.target.blur();
+                  }}
+                  contentEditable="true"
                   className="focus:shadow-outline focus:border-transparent outline-none px-1 -ml-1 rounded min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex"
                   style={{ minWidth: '185px' }}
                   title="Edit title"
