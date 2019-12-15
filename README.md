@@ -1,5 +1,11 @@
 # Bitwarden Print
 
+**Bitwarden Print** aims to provide a convenient format to print your
+Bitwarden backups. Everything is handled in the browser, your data does not go anywhere.
+That said, I would not trust this if without reviewing the source.
+
+**It's highly recommended to clone the repo and run it yourself.**
+
 ## Requirements
 
 - Node 10.x
@@ -19,24 +25,19 @@ Navigate to http://localhost:3000.
 **Features**
 
 - React 16, Express 4, and Tailwind CSS
-- Single commands to start, build, and serve the client and server
-- Shared environment variables
-- Babel to write ES6 everywhere
 - Prettier with Husky enabled on pre-commits
-- Hot reloading for the client and server
 
 **Setup Project**
 
-- Installs dependencies for the **Server** and **Client**.
+- Installs dependencies for the **Client**.
 - Creates an .env file with defaults if one doesn't exist.
 
 ```
 $ yarn setup
 ```
 
-**Start development servers**
+**Start development server**
 
-- **Server:** http://localhost:5000
 - **Client:** http://localhost:3000
 
 ```
@@ -55,13 +56,13 @@ Located in the [.env](.env) file. Follow [.env.example](.env.example) as an exam
 $ yarn setup
 ```
 
-**Build Server and Client**
+**Build Client**
 
 ```
 $ yarn build
 ```
 
-**Serve Server and Client**
+**Serve Client**
 
 ```
 $ yarn serve
