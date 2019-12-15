@@ -27,8 +27,8 @@ export default class Intro extends Component {
           </p>
           <p className="mb-4">
             I would not trust using this for personal use. I made this for myself, more as of a
-            proof of concept than something meant to be shared. Always be cautious when dealing with
-            your exported vault.
+            proof of concept rather than something meant to be shared. Always be cautious when
+            dealing with your exported vault.
           </p>
           <p className="mt-4">
             <strong className="font-bold">
