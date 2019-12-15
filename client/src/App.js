@@ -8,6 +8,7 @@ import { ReactComponent as FileImportIcon } from './assets/file-import.svg';
 import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
+import { ReactComponent as TrashIcon } from './assets/trash.svg';
 import Intro from './components/Intro.js';
 
 const initialState = {
@@ -199,7 +200,7 @@ export default class App extends Component {
                 <div className="flex flex-col lg:flex-row flex-1">
                   {data.folders.length > 0 && (
                     <div className="xl:mt-auto">
-                      <label className="label">Selected folders</label>
+                      <label className="label">Folders</label>
                       <ul className="flex flex-wrap -mx-2">
                         {data.folders.map(({ id, name }) => (
                           <li
@@ -216,7 +217,15 @@ export default class App extends Component {
                               onChange={() => this.toggleFolder(id)}
                               type="checkbox"
                             />
-                            <label className="btn w-full" htmlFor={id}>
+                            <label
+                              className="btn w-full"
+                              htmlFor={id}
+                              title={
+                                (foldersToPrint.includes(id) ? 'Hide ' : 'Show ') +
+                                name.charAt(0).toUpperCase() +
+                                name.slice(1)
+                              }
+                            >
                               {name}
                             </label>
                           </li>
@@ -226,7 +235,7 @@ export default class App extends Component {
                   )}
 
                   <div className="mt-4 lg:mt-auto flex-1 lg:pl-8 xl:px-8">
-                    <label className="label">Selected data</label>
+                    <label className="label">Data</label>
                     <ul className="flex flex-wrap -mx-2">
                       {dataToPrintKeys.map(option => (
                         <li
@@ -243,7 +252,15 @@ export default class App extends Component {
                             onChange={() => this.toggleDataOption(option)}
                             type="checkbox"
                           />
-                          <label className="btn w-full" htmlFor={option}>
+                          <label
+                            className="btn w-full"
+                            htmlFor={option}
+                            title={
+                              (dataToPrint[option] ? 'Hide ' : 'Show ') +
+                              option.charAt(0).toUpperCase() +
+                              option.slice(1)
+                            }
+                          >
                             {option}
                           </label>
                         </li>
@@ -254,7 +271,7 @@ export default class App extends Component {
                 <div className="xl:ml-auto mt-4 xl:mt-auto flex flex-col ">
                   {file.name && (
                     <Fragment>
-                      {file.size > 0 && <label className="label">Selected export</label>}
+                      {file.size > 0 && <label className="label">Vault</label>}
                       <div className="flex">
                         <span
                           className="font-bold uppercase text-xs btn mr-4 w-full"
@@ -265,9 +282,9 @@ export default class App extends Component {
                         <button
                           className="btn warning"
                           onClick={this.resetState}
-                          title="Select new file"
+                          title="Trash and start over"
                         >
-                          <UndoLogo className="h-4" />
+                          <TrashIcon className="h-4" />
                         </button>
                       </div>
                     </Fragment>

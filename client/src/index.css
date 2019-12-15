@@ -121,7 +121,7 @@ li {
 }
 
 .btn.warning:hover {
-  @apply bg-orange-600 text-white;
+  @apply bg-red-600 text-white;
 }
 
 .label {
