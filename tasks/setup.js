@@ -16,15 +16,6 @@ const fs = require('fs');
     consola.error(error);
   }
 
-  // Install Server dependecies
-  try {
-    consola.info('Installing Server dependecies…');
-    await execa('yarn', ['setup:server']);
-    consola.success('Server dependecies installed.');
-  } catch (error) {
-    consola.error(error);
-  }
-
   // Install Client dependecies
   try {
     consola.info('Installing Client dependecies…');

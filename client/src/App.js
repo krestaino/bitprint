@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
 
+import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
 import Intro from './components/Intro.js';
 
@@ -120,7 +121,10 @@ export default class App extends Component {
               })}
             >
               <h1 className="font-hairline text-3xl -mb-2 -m-1">Bitwarden Print</h1>
-              <div className="flex flex-col">
+              <div className="flex items-center">
+                <span className="flex font-bold uppercase text-sm mr-4 slide-in-left">
+                  Click to start… <ArrowLogo className="ml-2 h-5" />
+                </span>
                 <div className="relative btn">
                   <span className="font-bold uppercase text-xs">Select Backup</span>
                   <input

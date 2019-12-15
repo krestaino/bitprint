@@ -9,6 +9,29 @@
   }
 }
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: 1s 0s 1 slideInFromLeft;
+}
+
+a {
+  @apply font-medium underline;
+}
+
+a:hover {
+  @apply text-blue-500;
+}
+
 li {
   page-break-inside: avoid;
 }

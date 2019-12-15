@@ -5,16 +5,12 @@
   "scripts": {
     "format": "prettier --write '**/*.{css,js,json,md}'",
     "setup": "yarn install && node tasks/setup.js",
-    "setup:server": "yarn --cwd server/ install",
     "setup:client": "yarn --cwd client/ install",
-    "start": "dotenv -e .env concurrently \"yarn start:server\" \"yarn start:client\"",
-    "start:server": "yarn --cwd server/ start",
+    "start": "dotenv -e .env concurrently \"yarn start:client\"",
     "start:client": "yarn --cwd client/ start",
     "build": "dotenv -e .env node tasks/build.js",
-    "build:server": "yarn --cwd server/ build",
     "build:client": "yarn --cwd client/ build",
-    "serve": "set NODE_ENV=production && dotenv -e .env concurrently \"yarn serve:server\" \"yarn serve:client\"",
-    "serve:server": "yarn --cwd server/ serve",
+    "serve": "set NODE_ENV=production && dotenv -e .env concurrently \"yarn serve:client\"",
     "serve:client": "yarn --cwd client/ serve"
   },
   "husky": {
