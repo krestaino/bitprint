@@ -32,7 +32,7 @@ export default class Intro extends Component {
             Can I see a demo?
           </h2>
           <p>
-            <a href="?demo">{window.location.href}?demo</a>
+            <a href="?demo">{window.location.origin}/?demo</a>
           </p>
         </section>
         <section className="mb-4 py-4">
