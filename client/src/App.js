@@ -287,7 +287,10 @@ export default class App extends Component {
               <div className="flex justify-between items-baseline">
                 <h1
                   minlength="2"
-                  onKeyPress={event => event.nativeEvent.code === 'Enter' && event.target.blur()}
+                  onKeyPress={event =>
+                    (event.nativeEvent.keyCode === 13 || event.nativeEvent.which === 13) &&
+                    event.target.blur()
+                  }
                   contenteditable="true"
                   className={classNames({
                     'min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex': true
