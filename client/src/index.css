@@ -18,7 +18,7 @@ li {
 }
 
 .btn {
-  @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs mr-4 cursor-pointer overflow-hidden;
+  @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs cursor-pointer overflow-hidden;
 }
 
 .btn:hover {

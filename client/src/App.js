@@ -146,7 +146,7 @@ export default class App extends Component {
                             onChange={() => this.toggleFolder(id)}
                             type="checkbox"
                           />
-                          <label className="btn" htmlFor={id}>
+                          <label className="btn mr-4" htmlFor={id}>
                             {name}
                           </label>
                         </li>
@@ -167,7 +167,7 @@ export default class App extends Component {
                           onChange={() => this.toggleDataOption(option)}
                           type="checkbox"
                         />
-                        <label className="btn" htmlFor={option}>
+                        <label className="btn mr-4" htmlFor={option}>
                           {option}
                         </label>
                       </li>
@@ -181,7 +181,7 @@ export default class App extends Component {
                       {file.size > 0 && <label className="label">Selected backup</label>}
                       <div className="flex">
                         <span
-                          className="font-bold uppercase text-xs btn"
+                          className="font-bold uppercase text-xs btn mr-4"
                           style={{ cursor: 'not-allowed' }}
                         >
                           {`${file.name} (${(file.size / 1000).toFixed(1)} kB)`}
@@ -257,7 +257,7 @@ export default class App extends Component {
                           <span>{name}</span>
                         </div>
                         {login && (
-                          <div>
+                          <div className="font-mono">
                             {login.username && (
                               <div
                                 className={classNames({
@@ -266,7 +266,7 @@ export default class App extends Component {
                                 })}
                               >
                                 <span className="text-gray-500">U – </span>
-                                <span className="font-mono">{login.username}</span>
+                                <span>{login.username}</span>
                               </div>
                             )}
                             {login.password && (
@@ -277,7 +277,7 @@ export default class App extends Component {
                                 })}
                               >
                                 <span className="text-gray-500">P – </span>
-                                <span className="font-mono">{login.password}</span>
+                                <span>{login.password}</span>
                               </div>
                             )}
                             {login.totp && (
@@ -288,7 +288,7 @@ export default class App extends Component {
                                 })}
                               >
                                 <span className="text-gray-500">T – </span>
-                                <span className="font-mono">{login.totp}</span>
+                                <span>{login.totp}</span>
                               </div>
                             )}
                             {notes && (
@@ -299,7 +299,7 @@ export default class App extends Component {
                                 })}
                               >
                                 <span className="text-gray-500">N – </span>
-                                <span className="font-mono">{notes}</span>
+                                <span>{notes}</span>
                               </div>
                             )}
                             {fields &&
@@ -312,7 +312,7 @@ export default class App extends Component {
                                   key={index}
                                 >
                                   <span className="text-gray-500">{field.name} – </span>
-                                  <span className="font-mono">{field.value}</span>
+                                  <span>{field.value}</span>
                                 </div>
                               ))}
                           </div>
