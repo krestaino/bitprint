@@ -18,24 +18,39 @@ export default class App extends Component {
       fields: true
     },
     error: null,
+    file: {
+      name: '',
+      size: 0
+    },
     foldersToPrint: [],
-    fileName: null,
-    fileLastModified: null,
     loading: true
+  };
+
+  demoData = async () => {
+    const response = await fetch('/example.json');
+    const data = await response.json();
+    const foldersToPrint = data.folders.map(({ id }) => id);
+    const file = {
+      name: 'example.json',
+      lastModified: 1576401686010,
+      size: 15941
+    };
+
+    this.setState({ data, file, foldersToPrint });
   };
 
   getPrintItemLength = () => {
     const { data, foldersToPrint } = this.state;
 
-    if (foldersToPrint.length) {
+    if (foldersToPrint.length || data.folders.length) {
       return data.items.filter(item => foldersToPrint.includes(item.folderId)).length;
     } else {
       return data.items.length;
     }
   };
 
-  formatDate(fileLastModified) {
-    const date = new Date(fileLastModified);
+  formatDate() {
+    const date = new Date(this.state.file.lastModified);
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
   }
 
@@ -46,10 +61,8 @@ export default class App extends Component {
     reader.onload = event => {
       const data = JSON.parse(event.target.result);
       const foldersToPrint = data.folders.map(({ id }) => id);
-      const fileLastModified = this.formatDate(file.lastModified);
-      const fileName = file.name;
 
-      this.setState({ data, fileLastModified, fileName, foldersToPrint });
+      this.setState({ data, file, foldersToPrint });
     };
     reader.readAsText(file);
   };
@@ -69,23 +82,31 @@ export default class App extends Component {
     this.setState({ foldersToPrint });
   };
 
+  componentDidMount() {
+    if (window.location.pathname.includes('demo')) {
+      this.demoData();
+    }
+  }
+
   render() {
-    const { dataToPrint, foldersToPrint, data, fileLastModified, fileName } = this.state;
+    const { dataToPrint, foldersToPrint, data, file } = this.state;
 
     return (
       <main className="font-body">
         <div className="bg-gray-900 no-print text-white">
-          <div className="container py-8">
+          <div className="container py-8 relative">
             <div className="flex justify-between">
               <h1 className="font-hairline text-3xl">Bitwarden Print</h1>
               <div
                 className={classNames({
-                  active: fileName
+                  'absolute bottom-0 right-0': true,
+                  active: file.name
                 })}
               >
-                <div className="relative btn-blue">
+                <div className="relative mb-8 right-0 btn-blue">
                   <button className="font-bold uppercase text-xs">
-                    {fileName || 'Select Backup'}
+                    {(file.name && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
+                      'Select Backup'}
                   </button>
                   <input
                     className="opacity-0 absolute h-full w-full inset-0"
@@ -156,6 +177,7 @@ export default class App extends Component {
                   <span>
                     <span>Data – </span>
                     <span className="comma-list">
+                      <span>Names</span>
                       {Object.keys(dataToPrint).map(
                         option =>
                           dataToPrint[option] && (
@@ -166,7 +188,7 @@ export default class App extends Component {
                       )}
                     </span>
                   </span>
-                  <span>{fileLastModified}</span>
+                  <span>{this.formatDate(file.lastModified)}</span>
                 </div>
               </div>
               <ul>
