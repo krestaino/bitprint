@@ -313,17 +313,19 @@ export default class App extends Component {
                       event.target.blur();
                   }}
                   contentEditable="true"
-                  className="focus:shadow-outline focus:border-transparent outline-none px-1 -ml-1 rounded min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex"
+                  className="focus:shadow-outline focus:border-transparent outline-none px-1 -ml-1 rounded min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-400 whitespace-no-wrap flex"
                   style={{ minWidth: '185px' }}
                   title="Edit title"
                 >
                   Bitwarden Vault
                 </h1>
-                <span>Logins – {this.getPrintItemLength()}</span>
+                <span>
+                  Logins <strong>({this.getPrintItemLength()})</strong>
+                </span>
               </div>
               <div className="flex justify-between items-baseline">
+                <span>{this.formatDate(file.lastModified)}</span>
                 <span>
-                  <span>Data – </span>
                   <span className="comma-list">
                     <span>Names</span>
                     {dataToPrintKeys.map(
@@ -336,7 +338,6 @@ export default class App extends Component {
                     )}
                   </span>
                 </span>
-                <span>{this.formatDate(file.lastModified)}</span>
               </div>
             </div>
             <div className="fixed bottom-0 right-0 w-full no-print pointer-events-none">
@@ -366,7 +367,7 @@ export default class App extends Component {
                       className={classNames({
                         hidden:
                           (data.folders.length && !foldersToPrint.includes(folderId)) || false,
-                        'bg-gray-200 border border-gray-400 rounded mt-4 break-words': true
+                        'bg-white border border-gray-400 rounded mt-4 break-words shadow-md': true
                       })}
                       key={index}
                     >

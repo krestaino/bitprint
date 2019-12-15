@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @media print {
+  * {
+    box-shadow: none !important;
+  }
+
   html {
     font-size: 15px;
   }
@@ -75,6 +79,8 @@
 }
 
 html {
+  @apply bg-gray-100;
+
   overflow-y: scroll;
 }
 
