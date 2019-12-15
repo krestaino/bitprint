@@ -185,14 +185,14 @@ export default class App extends Component {
                 <PrintIcon className="h-6 mr-2" />
                 <span>BitPrint</span>
               </h1>
-              <div className="flex items-center font-bold uppercase text-sm">
-                <span className="flex items-center mr-4 slide-in-left">
+              <div className="flex items-center font-bold uppercase">
+                <span className="flex items-center mr-4 slide-in-left text-xs">
                   Click to start <ArrowLogo className="ml-2 h-5" />
                 </span>
-                <div className="relative btn">
+                <div className="relative btn -active">
                   <span className="flex items-center">
-                    <FileImportIcon className="h-4 mr-1" />
-                    Select Vault Export
+                    <FileImportIcon className="h-4 mr-2" />
+                    <span className="text-xs">Import Vault</span>
                   </span>
                   <input
                     className="opacity-0 absolute h-full w-full inset-0"
