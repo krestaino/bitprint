@@ -16,9 +16,9 @@ export default class Intro extends Component {
             What is this?
           </h2>
           <p>
-            <strong>Bitwarden Print</strong> aims to provide a convenient format to print your
-            Bitwarden backups. Everything is handled in the browser, your data does not go anywhere.
-            That said, I would not trust this without reviewing the{' '}
+            <strong>Bitwarden Print</strong> provides you an easy way to import your vault exports
+            into a format which is designed to be printed. Everything is handled in the browser,
+            your data does not go anywhere. That said, I would not trust this without reviewing the{' '}
             <a href={packageJson.repository.url}>source</a>.
           </p>
           <p className="mt-4">
@@ -46,7 +46,7 @@ export default class Intro extends Component {
         </section>
         <section className="mb-4 py-4">
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
-            How do I get my backup?
+            How do I get my vault export?
           </h2>
           <ol className="flex flex-col md:flex-row justify-center flex-wrap text-center md:-mt-8 flex-1 -mx-4">
             <li className="md:mt-6 flex-1">

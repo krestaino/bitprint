@@ -183,11 +183,11 @@ export default class App extends Component {
                 Bitwarden Print
               </h1>
               <div className="flex items-center">
-                <span className="flex font-bold uppercase text-sm mr-4 slide-in-left">
-                  Click to start… <ArrowLogo className="ml-2 h-5" />
+                <span className="flex items-center font-bold uppercase text-sm mr-4 slide-in-left">
+                  Click to start <ArrowLogo className="ml-2 h-5" />
                 </span>
                 <div className="relative btn">
-                  <span className="font-bold uppercase text-xs">Select Backup</span>
+                  <span className="font-bold uppercase text-xs">Select Export</span>
                   <input
                     className="opacity-0 absolute h-full w-full inset-0"
                     onChange={this.readFile}
@@ -256,7 +256,7 @@ export default class App extends Component {
                 <div className="xl:ml-auto mt-4 xl:mt-auto flex flex-col ">
                   {file.name && (
                     <Fragment>
-                      {file.size > 0 && <label className="label">Selected backup</label>}
+                      {file.size > 0 && <label className="label">Selected export</label>}
                       <div className="flex">
                         <span
                           className="font-bold uppercase text-xs btn mr-4 w-full"
