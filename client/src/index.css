@@ -17,19 +17,23 @@ li {
   content: ',\00a0';
 }
 
-.btn-blue {
+.btn {
   @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs mr-4;
 }
 
-.btn-blue:hover {
+.btn:hover {
   @apply bg-gray-300 text-gray-800;
 }
-.active .btn-blue {
+.active .btn {
   @apply bg-blue-500 text-white;
 }
 
-.active .btn-blue:hover {
+.active .btn:hover {
   @apply bg-blue-600;
+}
+
+.btn.warning:hover {
+  @apply bg-orange-600 text-white;
 }
 
 .label {

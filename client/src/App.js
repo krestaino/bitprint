@@ -70,6 +70,11 @@ export default class App extends Component {
     reader.readAsText(file);
   };
 
+  resetState = () => {
+    document.querySelector('input[type=file]').value = null;
+    this.setState({ ...initialState });
+  };
+
   toggleDataOption = option => {
     const dataToPrint = { ...this.state.dataToPrint };
     dataToPrint[option] = !dataToPrint[option];
@@ -112,14 +117,20 @@ export default class App extends Component {
                 <div className="mb-8 flex">
                   <div
                     className={classNames({
+                      'cursor-not-allowed': file.size,
                       active: file.name
                     })}
                   >
-                    <div className="relative btn-blue">
-                      <button className="font-bold uppercase text-xs">
-                        {(file.name && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
+                    <div
+                      className={classNames({
+                        'pointer-events-none': file.size,
+                        'relative btn': true
+                      })}
+                    >
+                      <span className="font-bold uppercase text-xs">
+                        {(file.size && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
                           'Select Backup'}
-                      </button>
+                      </span>
                       <input
                         className="opacity-0 absolute h-full w-full inset-0"
                         onChange={this.readFile}
@@ -128,7 +139,11 @@ export default class App extends Component {
                     </div>
                   </div>
                   {file.name && (
-                    <button className="btn-blue" onClick={() => this.setState({ ...initialState })}>
+                    <button
+                      className="btn warning"
+                      onClick={this.resetState}
+                      title="Select new file"
+                    >
                       <UndoLogo className="h-4" />
                     </button>
                   )}
@@ -150,7 +165,7 @@ export default class App extends Component {
                             onChange={() => this.toggleFolder(id)}
                             type="checkbox"
                           />
-                          <label className="btn-blue" htmlFor={id}>
+                          <label className="btn" htmlFor={id}>
                             {name}
                           </label>
                         </li>
@@ -171,7 +186,7 @@ export default class App extends Component {
                           onChange={() => this.toggleDataOption(option)}
                           type="checkbox"
                         />
-                        <label className="btn-blue" htmlFor={option}>
+                        <label className="btn" htmlFor={option}>
                           {option}
                         </label>
                       </li>
