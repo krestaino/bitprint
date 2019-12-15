@@ -74,6 +74,10 @@
   @apply text-white bg-blue-500;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 a {
   @apply font-medium underline;
 }

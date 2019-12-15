@@ -164,12 +164,12 @@ export default class App extends Component {
 
     return (
       <main className="font-body leading-relaxed h-screen flex flex-col">
-        <div className="bg-gray-900 no-print text-white sticky top-0">
-          <div className="container py-6 xl:py-8 xl:pt-6 relative">
+        <div className="bg-gray-900 no-print text-white sticky top-0 py-6 xl:h-24">
+          <div className="container relative h-full flex items-center w-full">
             <div
               className={classNames({
                 hidden: file.size !== 0,
-                'flex justify-between items-center flex-col md:flex-row': true
+                'flex justify-between items-center flex-col md:flex-row w-full': true
               })}
             >
               <h1 className="font-hairline text-2xl md:text-3xl mb-4 md:-mb-2 -m-1 flex items-center">
@@ -194,7 +194,7 @@ export default class App extends Component {
               </div>
             </div>
             {data.items.length > 0 && (
-              <div className="flex flex-col xl:flex-row -mt-2">
+              <div className="flex flex-col xl:flex-row -mt-2 w-full">
                 <div className="flex flex-col lg:flex-row flex-1">
                   {data.folders.length > 0 && (
                     <div className="xl:mt-auto">
