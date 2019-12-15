@@ -70,6 +70,10 @@
   animation: 1s 0s 1 slideInBottom;
 }
 
+::selection {
+  @apply text-white bg-blue-500;
+}
+
 a {
   @apply font-medium underline;
 }
