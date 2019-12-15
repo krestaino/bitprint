@@ -201,11 +201,11 @@ export default class App extends Component {
                 {data.folders.length > 0 && (
                   <div className="xl:mt-auto">
                     <label className="label">Selected folders</label>
-                    <ul className="flex lg:mr-8 flex-wrap -mt-4 -mx-2 md:mx-0">
+                    <ul className="flex lg:mr-8 flex-wrap -mt-4 -mx-2 sm:mx-0">
                       {data.folders.map(({ id, name }) => (
                         <li
                           className={classNames({
-                            'mt-4 w-half sm:w-auto px-2 md:px-0': true,
+                            'mt-4 w-half sm:w-auto px-2 sm:px-0': true,
                             '-active': foldersToPrint.includes(id)
                           })}
                           key={id}
@@ -228,11 +228,11 @@ export default class App extends Component {
 
                 <div className="mt-4 xl:mt-auto">
                   <label className="label">Selected data</label>
-                  <ul className="flex flex-wrap -mt-4 -mx-2 md:mx-0">
+                  <ul className="flex flex-wrap -mt-4 -mx-2 sm:mx-0">
                     {dataToPrintKeys.map(option => (
                       <li
                         className={classNames({
-                          'mt-4 w-half sm:w-auto px-2 md:px-0': true,
+                          'mt-4 w-half sm:w-auto px-2 sm:px-0': true,
                           '-active': dataToPrint[option]
                         })}
                         key={option}
@@ -282,7 +282,7 @@ export default class App extends Component {
 
         {data.items.length > 0 && (
           <div className="container my-8 text-gray-700">
-            <div className="px-4">
+            <div className="px-4 print-fix">
               <div className="flex justify-between items-baseline">
                 <h1 className="font-bold text-2xl text-gray-900">Bitwarden Vault</h1>
                 <span>Logins – {this.getPrintItemLength()}</span>
