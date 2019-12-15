@@ -1,0 +1,574 @@
+{
+  "folders": [
+    {
+      "id": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "name": "Personal"
+    },
+    {
+      "id": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "name": "Work"
+    }
+  ],
+  "items": [
+    {
+      "id": "7b9d88d3-7e9d-4888-98ae-c76f9e36651b",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Amazon",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://amazon.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "4bedd2d5ce7043b9a35c22748",
+        "totp": "159082"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "a3fc966e-d978-4ec8-a095-a87504338d3a",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Apple",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://apple.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "ff806625ce124feb8b4523d01",
+        "totp": "274781"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "000603af-db07-4097-b2bf-e93e886878b0",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Digital Ocean",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://digitalocean.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "7f0760d88da74a17bb3207a91",
+        "totp": "933644"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "8d402fed-1ad9-455c-8c69-264a49409466",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Discord",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://discordapp.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "370bfec2de384210946ef64b6",
+        "totp": "316036"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "b0f217f4-ef0d-42bc-9bc5-fc16d2c9b727",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Firefox",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://firefox.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "828e6698346d49409229bcc5d",
+        "totp": "687447"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "5957001c-3572-45ec-88bb-09323d2a2d28",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Github",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://github.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "974e4bd9aa014f03a0e4fdf95",
+        "totp": "580537"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "d473f6ad-8a91-4c7b-ad20-51cb6be170fe",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Google",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://google.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "3a7d495698a4440fa783807b3",
+        "totp": "837733"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "eb11b3b8-a2be-44f3-8c08-2fcf2eba7d89",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "LinkedIn",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://linkedin.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "6f981788d42e4ba4bd28b3ba4",
+        "totp": "440062"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "85f96327-a70e-4c4a-8ab1-3568c316d7cb",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Microsoft",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://microsoft.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "1eb8ed24f1904f23a46c69864",
+        "totp": "256364"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "08d278d2-a8f9-4ef5-8ec7-5f4c4ba44b7f",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Nexus Mods",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://nexusmods.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "2160ab440e6c4d698d63abaa0",
+        "totp": "791976"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "ddc0f138-5eb8-4762-97a7-3dd39d3be1dd",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "NPM",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://npmjs.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "5b6a2d6942a841bb9940c34bc",
+        "totp": "367837"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "2f89b499-1de7-45a7-b643-f87a5c14baa6",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Plex",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://plex.tv"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "79c88e35526945b89102ed69a",
+        "totp": "459728"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "52f4ff02-059c-464d-a00a-6b86cac732da",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Reddit",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://reddit.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "a9d621aa9d084e5cbd748b41f",
+        "totp": "826144"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "22fc63ba-7508-4d95-936c-c6523dd62fdd",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Rent Payment",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://rentpayment.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "9fbc2b4a89ab45c7970edd401",
+        "totp": "812280"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "1863c6ef-b7e9-41b7-a6e6-f685a68e8a66",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Seafile",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://seafile.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "7a22c947a2fe4652acd69d4ae",
+        "totp": "849807"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "3015ebf9-3e93-470c-a1cf-12bdf15d884a",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Sprout Social",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://sproutsocial.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "77ed84be08254d349a83a5903",
+        "totp": "890253"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "51387abc-70c6-4a6d-b39c-a4ab87840df8",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "Steam",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://steampowered.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "5b6f79f64038437ab623eb890",
+        "totp": "111772"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "31f9c173-16be-4bff-a7e2-1ed71842c802",
+      "organizationId": null,
+      "folderId": "e5903322-0087-43bd-8ac0-ab24007f5329",
+      "type": 1,
+      "name": "TeamViewer",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://teamviewer.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "c777fd3cf4c742e484c7dcc24",
+        "totp": "583861"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "e40fe042-cbd6-4f02-b29c-b9abd419b650",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Twitch",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://twitch.tv"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "c8964ce35e0949ad9a2f87aa0",
+        "totp": "367532"
+      },
+      "collectionIds": null
+    },
+    {
+      "id": "c468dc7e-df1f-4cd2-b880-1ea96dfe519e",
+      "organizationId": null,
+      "folderId": "91411d13-5e00-43e2-9bcc-ab24007f4e1e",
+      "type": 1,
+      "name": "Twitter",
+      "notes": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada nunc at neque commodo vehicula.",
+      "favorite": false,
+      "fields": [
+        {
+          "name": "Recovery Codes",
+          "value": "430489 304068 298726 928677",
+          "type": 0
+        }
+      ],
+      "login": {
+        "uris": [
+          {
+            "match": null,
+            "uri": "https://twitter.com"
+          }
+        ],
+        "username": "demo@example.com",
+        "password": "af28e8fad3944feeaf240108f",
+        "totp": "479033"
+      },
+      "collectionIds": null
+    }
+  ]
+}

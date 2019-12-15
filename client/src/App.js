@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+import Intro from './components/Intro.js';
+
 export default class App extends Component {
   state = {
     data: {
@@ -8,6 +10,7 @@ export default class App extends Component {
       items: []
     },
     dataToPrint: {
+      logos: true,
       username: true,
       password: true,
       totp: true,
@@ -24,7 +27,11 @@ export default class App extends Component {
   getPrintItemLength = () => {
     const { data, foldersToPrint } = this.state;
 
-    return data.items.filter(item => foldersToPrint.includes(item.folderId)).length;
+    if (foldersToPrint.length) {
+      return data.items.filter(item => foldersToPrint.includes(item.folderId)).length;
+    } else {
+      return data.items.length;
+    }
   };
 
   formatDate(fileLastModified) {
@@ -68,7 +75,7 @@ export default class App extends Component {
     return (
       <main className="font-body">
         <div className="bg-gray-900 no-print text-white">
-          <div className="container mx-auto px-4 py-8">
+          <div className="container py-8">
             <div className="flex justify-between">
               <h1 className="font-hairline text-3xl">Bitwarden Print</h1>
               <div
@@ -91,25 +98,27 @@ export default class App extends Component {
             </div>
             {data.items.length > 0 && (
               <div className="flex mt-4">
-                <div>
-                  <label className="label">Select folders</label>
-                  <ul className="flex mr-8">
-                    {data.folders.map(({ id, name }) => (
-                      <li className={foldersToPrint.includes(id) && 'active'} key={id}>
-                        <input
-                          checked={foldersToPrint.includes(id)}
-                          className="hidden"
-                          id={id}
-                          onChange={() => this.toggleFolder(id)}
-                          type="checkbox"
-                        />
-                        <label className="btn-blue" htmlFor={id}>
-                          {name}
-                        </label>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {data.folders.length > 0 && (
+                  <div>
+                    <label className="label">Select folders</label>
+                    <ul className="flex mr-8">
+                      {data.folders.map(({ id, name }) => (
+                        <li className={foldersToPrint.includes(id) && 'active'} key={id}>
+                          <input
+                            checked={foldersToPrint.includes(id)}
+                            className="hidden"
+                            id={id}
+                            onChange={() => this.toggleFolder(id)}
+                            type="checkbox"
+                          />
+                          <label className="btn-blue" htmlFor={id}>
+                            {name}
+                          </label>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 <div>
                   <label className="label">Select data</label>
@@ -134,7 +143,8 @@ export default class App extends Component {
             )}
           </div>
         </div>
-        <section className="container mx-auto px-4 my-8 text-gray-700">
+        <Intro />
+        <section className="container my-8 text-gray-700">
           {data.items.length > 0 && (
             <div>
               <div className="px-4">
@@ -163,12 +173,24 @@ export default class App extends Component {
                 {data.items.map(({ fields, folderId, login, name, notes }, index) => (
                   <li
                     className={classNames({
-                      hidden: !foldersToPrint.includes(folderId),
+                      hidden: (data.folders.length && !foldersToPrint.includes(folderId)) || false,
                       'bg-gray-200 border border-gray-400 rounded mt-4 break-words': true
                     })}
                     key={index}
                   >
-                    <div className="px-4 py-2 font-bold">{name}</div>
+                    <div className="px-4 py-2 font-bold flex items-center">
+                      <img
+                        alt={name}
+                        className={classNames({
+                          hidden: !dataToPrint['logos'],
+                          'inline-block mr-2 h-5': true
+                        })}
+                        src={`https://icons.bitwarden.net/${
+                          new URL(login.uris[0].uri).hostname
+                        }/icon.png`}
+                      />
+                      <span>{name}</span>
+                    </div>
                     {login && (
                       <div>
                         {login.username && (

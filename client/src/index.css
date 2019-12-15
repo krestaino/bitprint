@@ -35,3 +35,7 @@ li {
 .label {
   @apply uppercase text-xs mb-1 inline-block;
 }
+
+.container {
+  @apply mx-auto px-4;
+}
