@@ -47,17 +47,17 @@ export default class Intro extends Component {
           </h2>
           <ul className="list-disc ml-4">
             <li>
-              <a className="block" href="?demo">
+              <a className="inline-block" href="?demo">
                 {window.location.origin}/?demo
               </a>
             </li>
             <li>
-              <a className="block" href={jsonHref}>
+              <a className="inline-block" href={jsonHref}>
                 {jsonHref} (input)
               </a>
             </li>
             <li>
-              <a className="block" href={pdfHref}>
+              <a className="inline-block" href={pdfHref}>
                 {pdfHref} (output)
               </a>
             </li>
