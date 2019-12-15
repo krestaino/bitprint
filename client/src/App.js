@@ -186,7 +186,13 @@ export default class App extends Component {
                         )}
                         {fields &&
                           fields.map((field, index) => (
-                            <div className="px-4 py-2 border-t border-gray-400" key={index}>
+                            <div
+                              className={classNames({
+                                hidden: !dataToPrint['fields'],
+                                'px-4 py-2 border-t border-gray-400': true
+                              })}
+                              key={index}
+                            >
                               <span className="text-gray-500">{field.name} – </span>
                               <span>{field.value}</span>
                             </div>
