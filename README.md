@@ -1,5 +1,7 @@
 # BitPrint
 
+![Screenshot](.github/screenshot.png)
+
 **BitPrint** provides you an easy way to import your Bitwarden vault exports into a layout which is designed to be printed. Everything is handled in the browser, your data does not go anywhere.
 That said, I would not trust this without reviewing the source.
 
