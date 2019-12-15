@@ -11,7 +11,8 @@ I would not trust using this for personal use. I made this for myself, more as o
 ## Demo
 
 - https://bitprint.kmr.io/?demo
-- https://bitprint.kmr.io/demo.pdf
+- https://bitprint.kmr.io/demo.json (input)
+- https://bitprint.kmr.io/demo.pdf (output)
 
 ## Requirements
 

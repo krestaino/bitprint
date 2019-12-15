@@ -7,6 +7,7 @@ import Step3 from '../assets/step-3.png';
 export default class Intro extends Component {
   render() {
     const pdfHref = window.location.origin + '/demo.pdf';
+    const jsonHref = window.location.origin + '/demo.json';
 
     return (
       <div className="container my-4 md:my-8 mx-auto">
@@ -51,8 +52,13 @@ export default class Intro extends Component {
               </a>
             </li>
             <li>
+              <a className="block" href={jsonHref}>
+                {jsonHref} (input)
+              </a>
+            </li>
+            <li>
               <a className="block" href={pdfHref}>
-                {pdfHref}
+                {pdfHref} (output)
               </a>
             </li>
           </ul>
