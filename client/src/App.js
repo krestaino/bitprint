@@ -7,7 +7,6 @@ import { ReactComponent as FrownOpenIcon } from './assets/frown-open.svg';
 import { ReactComponent as FileImportIcon } from './assets/file-import.svg';
 import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
-import { ReactComponent as UndoLogo } from './assets/undo.svg';
 import { ReactComponent as TrashIcon } from './assets/trash.svg';
 import Intro from './components/Intro.js';
 
