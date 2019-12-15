@@ -341,7 +341,7 @@ export default class App extends Component {
             </div>
             <div className="fixed bottom-0 right-0 w-full no-print pointer-events-none">
               <div className="container flex">
-                <span className="ml-auto inline-flex p-8 pb-8 slide-in-bottom">
+                <span className="ml-auto inline-flex p-4 md:p-8 slide-in-bottom">
                   <button
                     className="btn -rounded -lg -active shadow-md flex items-center"
                     onClick={() => window.print()}
