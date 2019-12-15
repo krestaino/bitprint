@@ -167,6 +167,7 @@ export default class App extends Component {
 
   render() {
     const { dataToPrint, foldersToPrint, data, file } = this.state;
+    const dataToPrintKeys = Object.keys(dataToPrint);
 
     return (
       <main className="font-body h-screen flex flex-col">
@@ -220,7 +221,7 @@ export default class App extends Component {
                 <div className="mt-4 xl:mt-auto">
                   <label className="label">Selected data</label>
                   <ul className="flex">
-                    {Object.keys(dataToPrint).map(option => (
+                    {dataToPrintKeys.map(option => (
                       <li className={dataToPrint[option] && '-active'} key={option}>
                         <input
                           checked={dataToPrint[option]}
@@ -277,7 +278,7 @@ export default class App extends Component {
                     <span>Data – </span>
                     <span className="comma-list">
                       <span>Names</span>
-                      {Object.keys(dataToPrint).map(
+                      {dataToPrintKeys.map(
                         option =>
                           dataToPrint[option] && (
                             <span className="inline-block capitalize" key={option}>
@@ -290,10 +291,14 @@ export default class App extends Component {
                   <span>{this.formatDate(file.lastModified)}</span>
                 </div>
               </div>
-              <div className="fixed bottom-0 right-0 w-full no-print">
+              <div className="fixed bottom-0 right-0 w-full no-print pointer-events-none">
                 <div className="container flex">
-                  <span className="ml-auto inline-flex p-8 pb-24 slide-in-bottom">
-                    <button className="btn -lg -active shadow-md" onClick={() => window.print()}>
+                  <span className="ml-auto inline-flex p-8 pb-8 slide-in-bottom">
+                    <button
+                      className="btn -lg -active shadow-md"
+                      onClick={() => window.print()}
+                      style={{ pointerEvents: 'all' }}
+                    >
                       Print
                     </button>
                   </span>
@@ -397,7 +402,7 @@ export default class App extends Component {
             </div>
           )}
         </section>
-        <footer className="relative text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4">
+        <footer className="text-center m-12 text-gray-700 font-mono font-sm mt-auto pt-4">
           <span>v{packageJson.version}</span>
           <span> – </span>
           <a className="font-bold" href={packageJson.repository.url} target="_blank">
