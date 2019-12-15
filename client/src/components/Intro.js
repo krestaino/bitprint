@@ -27,7 +27,7 @@ export default class Intro extends Component {
             into a layout which is designed to be printed. Processing is handled client side.
           </p>
           <p className="mb-4">
-            I would not trust using this for personal use. I made this for myself, more as of a
+            I would not recommend using this for personal use. I made this for myself, more as of a
             proof of concept rather than something meant to be shared. Always be cautious when
             dealing with your exported vault.
           </p>
