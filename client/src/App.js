@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import classNames from 'classnames';
 
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
@@ -40,6 +40,16 @@ export default class App extends Component {
     };
 
     this.setState({ data, file, foldersToPrint });
+  };
+
+  getHostName = login => {
+    try {
+      const hostname = new URL(login.uris[0].uri).hostname;
+      let _hostname = hostname.split('.');
+      return _hostname[_hostname.length - 2] + '.' + _hostname[_hostname.length - 1];
+    } catch {
+      return false;
+    }
   };
 
   getPrintItemLength = () => {
@@ -102,58 +112,29 @@ export default class App extends Component {
     return (
       <main className="font-body">
         <div className="bg-gray-900 no-print text-white sticky top-0">
-          <div className="container pb-8 pt-6 relative">
-            <div className="flex justify-between">
-              <h1
-                className={classNames({
-                  hidden: file.size !== 0,
-                  'font-hairline text-3xl -mb-2': true
-                })}
-              >
-                Bitwarden Print
-              </h1>
-              <div className="absolute bottom-0 right-0 flex flex-col">
-                {file.size > 0 && <label className="label">Selected backup</label>}
-                <div className="mb-8 flex">
-                  <div
-                    className={classNames({
-                      'cursor-not-allowed': file.size,
-                      active: file.name
-                    })}
-                  >
-                    <div
-                      className={classNames({
-                        'pointer-events-none': file.size,
-                        'relative btn': true
-                      })}
-                    >
-                      <span className="font-bold uppercase text-xs">
-                        {(file.size && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
-                          'Select Backup'}
-                      </span>
-                      <input
-                        className="opacity-0 absolute h-full w-full inset-0"
-                        onChange={this.readFile}
-                        type="file"
-                      />
-                    </div>
-                  </div>
-                  {file.name && (
-                    <button
-                      className="btn warning"
-                      onClick={this.resetState}
-                      title="Select new file"
-                    >
-                      <UndoLogo className="h-4" />
-                    </button>
-                  )}
+          <div className="container py-6 xl:py-8 xl:pt-6 relative">
+            <div
+              className={classNames({
+                hidden: file.size !== 0,
+                'flex justify-between': true
+              })}
+            >
+              <h1 className="font-hairline text-3xl -mb-2 -m-1">Bitwarden Print</h1>
+              <div className="flex flex-col">
+                <div className="relative btn">
+                  <span className="font-bold uppercase text-xs">Select Backup</span>
+                  <input
+                    className="opacity-0 absolute h-full w-full inset-0"
+                    onChange={this.readFile}
+                    type="file"
+                  />
                 </div>
               </div>
             </div>
             {data.items.length > 0 && (
-              <div className="flex">
+              <div className="flex flex-col xl:flex-row -mt-2">
                 {data.folders.length > 0 && (
-                  <div>
+                  <div className="xl:mt-auto">
                     <label className="label">Selected folders</label>
                     <ul className="flex mr-8">
                       {data.folders.map(({ id, name }) => (
@@ -174,7 +155,7 @@ export default class App extends Component {
                   </div>
                 )}
 
-                <div>
+                <div className="mt-4 xl:mt-auto">
                   <label className="label">Selected data</label>
                   <ul className="flex">
                     {Object.keys(dataToPrint).map(option => (
@@ -192,6 +173,29 @@ export default class App extends Component {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                <div className="xl:ml-auto mt-4 xl:mt-auto flex flex-col ">
+                  {file.name && (
+                    <Fragment>
+                      {file.size > 0 && <label className="label">Selected backup</label>}
+                      <div className="flex">
+                        <span
+                          className="font-bold uppercase text-xs btn"
+                          style={{ cursor: 'not-allowed' }}
+                        >
+                          {`${file.name} (${(file.size / 1000).toFixed(1)} kB)`}
+                        </span>
+                        <button
+                          className="btn warning"
+                          onClick={this.resetState}
+                          title="Select new file"
+                        >
+                          <UndoLogo className="h-4" />
+                        </button>
+                      </div>
+                    </Fragment>
+                  )}
                 </div>
               </div>
             )}
@@ -237,16 +241,17 @@ export default class App extends Component {
                         key={index}
                       >
                         <div className="px-4 py-2 font-bold flex items-center">
-                          {login && login.uris && console.log(login.uris) && (
+                          {login.uris && (
                             <img
                               alt={name}
                               className={classNames({
                                 hidden: !dataToPrint['logos'],
-                                'inline-block mr-2 h-5': true
+                                'inline-block mr-2 h-5 w-5': true
                               })}
-                              src={`https://icons.bitwarden.net/${
-                                new URL(login.uris[0].uri).hostname
-                              }/icon.png`}
+                              src={`https://icons.bitwarden.net/${this.getHostName(
+                                login
+                              )}/icon.png`}
+                              style={{ textIndent: '-9999px' }}
                             />
                           )}
                           <span>{name}</span>
