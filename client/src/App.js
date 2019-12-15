@@ -285,7 +285,15 @@ export default class App extends Component {
           <div className="container my-8 text-gray-700">
             <div className="px-4 print-fix">
               <div className="flex justify-between items-baseline">
-                <h1 className="font-bold text-2xl text-gray-900">Bitwarden Vault</h1>
+                <h1
+                  contenteditable="true"
+                  className={classNames({
+                    'font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex': true
+                  })}
+                  title="Edit title"
+                >
+                  Bitwarden Vault
+                </h1>
                 <span>Logins – {this.getPrintItemLength()}</span>
               </div>
               <div className="flex justify-between items-baseline">
