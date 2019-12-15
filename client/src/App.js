@@ -286,6 +286,7 @@ export default class App extends Component {
             <div className="px-4 print-fix">
               <div className="flex justify-between items-baseline">
                 <h1
+                  spellcheck="false"
                   minlength="2"
                   onKeyPress={event =>
                     (event.nativeEvent.keyCode === 13 || event.nativeEvent.which === 13) &&
