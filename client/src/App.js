@@ -33,11 +33,11 @@ export default class App extends Component {
   state = { ...initialState };
 
   demoData = async () => {
-    const response = await fetch('/example.json');
+    const response = await fetch('/demo.json');
     const data = await response.json();
     const foldersToPrint = data.folders.map(({ id }) => id);
     const file = {
-      name: 'example.json',
+      name: 'demo.json',
       lastModified: 1576401686010,
       size: 15941
     };
@@ -170,7 +170,7 @@ export default class App extends Component {
     const dataToPrintKeys = Object.keys(dataToPrint);
 
     return (
-      <main className="font-body h-screen flex flex-col">
+      <main className="font-body leading-relaxed h-screen flex flex-col">
         <div className="bg-gray-900 no-print text-white sticky top-0">
           <div className="container py-6 xl:py-8 xl:pt-6 relative">
             <div
@@ -286,10 +286,13 @@ export default class App extends Component {
             <div className="px-4 print-fix">
               <div className="flex justify-between items-baseline">
                 <h1
+                  minlength="2"
+                  onKeyPress={event => event.nativeEvent.code === 'Enter' && event.target.blur()}
                   contenteditable="true"
                   className={classNames({
-                    'font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex': true
+                    'min-w-full font-bold text-2xl text-gray-900 border-b border-blue-500 border-dashed hover:bg-gray-200 whitespace-no-wrap flex': true
                   })}
+                  style={{ minWidth: '185px' }}
                   title="Edit title"
                 >
                   Bitwarden Vault
@@ -327,7 +330,7 @@ export default class App extends Component {
                 </span>
               </div>
             </div>
-            <ul>
+            <ul className="leading-snug">
               {data.items.map(
                 ({ fields, folderId, login, name, notes, type }, index) =>
                   type === 1 && (

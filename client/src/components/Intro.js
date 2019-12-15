@@ -7,6 +7,8 @@ import Step3 from '../assets/step-3.png';
 
 export default class Intro extends Component {
   render() {
+    const pdfHref = window.location.origin + '/demo.pdf';
+
     return (
       <div className="container my-4 md:my-8 mx-auto">
         <section className="mb-4 py-4">
@@ -29,9 +31,18 @@ export default class Intro extends Component {
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
             Can I see a demo?
           </h2>
-          <p>
-            <a href="?demo">{window.location.origin}/?demo</a>
-          </p>
+          <ul className="list-disc ml-4">
+            <li>
+              <a className="block" href="?demo">
+                {window.location.origin}/?demo
+              </a>
+            </li>
+            <li>
+              <a className="block" href={pdfHref}>
+                {pdfHref}
+              </a>
+            </li>
+          </ul>
         </section>
         <section className="mb-4 py-4">
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">

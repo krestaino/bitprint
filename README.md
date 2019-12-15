@@ -8,7 +8,8 @@ That said, I would not trust this without reviewing the source.
 
 ## Demo
 
-https://bitwarden-print.kmr.io/?demo
+- https://bitwarden-print.kmr.io/?demo
+- https://bitwarden-print.kmr.io/demo.pdf
 
 ## Requirements
 
