@@ -2,7 +2,7 @@
 
 **Bitwarden Print** aims to provide a convenient format to print your
 Bitwarden backups. Everything is handled in the browser, your data does not go anywhere.
-That said, I would not trust this if without reviewing the source.
+That said, I would not trust this without reviewing the source.
 
 **It's highly recommended to clone the repo and run it yourself.**
 
