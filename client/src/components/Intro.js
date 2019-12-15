@@ -50,16 +50,19 @@ export default class Intro extends Component {
               <a className="inline-block" href="?demo">
                 {window.location.origin}/?demo
               </a>
+              <span> (start here)</span>
             </li>
             <li>
               <a className="inline-block" href={jsonHref}>
-                {jsonHref} (input)
+                {jsonHref}
               </a>
+              <span> (vault export)</span>
             </li>
             <li>
               <a className="inline-block" href={pdfHref}>
-                {pdfHref} (output)
+                {pdfHref}
               </a>
+              <span> (pdf to print)</span>
             </li>
           </ul>
         </section>
