@@ -234,7 +234,12 @@ export default class App extends Component {
                     </div>
                   )}
 
-                  <div className="mt-4 lg:mt-auto flex-1 lg:pl-8 xl:px-8">
+                  <div
+                    className={classNames({
+                      'mt-4 lg:mt-auto flex-1 lg:pl-8 xl:px-8': true,
+                      'lg:-ml-8': data.folders.length === 0
+                    })}
+                  >
                     <label className="label">Data</label>
                     <ul className="flex flex-wrap -mx-2">
                       {dataToPrintKeys.map(option => (
