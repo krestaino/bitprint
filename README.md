@@ -1,7 +1,5 @@
 # BitPrint
 
-![Screenshot](.github/screenshot.png)
-
 **BitPrint** provides you an easy way to import your Bitwarden vault into a
 layout which is designed to be printed. Processing is handled client side.
 
@@ -10,6 +8,8 @@ proof of concept than something meant to be shared. Always be cautious when deal
 your exported vault.
 
 **TL;DR: Do not upload your personal vault on the demo site.**
+
+![Screenshot](.github/screenshot.png)
 
 ## Demo
 
