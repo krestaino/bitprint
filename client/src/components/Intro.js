@@ -15,15 +15,22 @@ export default class Intro extends Component {
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
             What is this?
           </h2>
-          <p>
-            <strong>BitPrint</strong> provides you an easy way to import your Bitwarden vault
-            exports into a layout which is designed to be printed. Everything is handled in the
-            browser, your data does not go anywhere. That said, I would not trust this without
-            reviewing the <a href={packageJson.repository.url}>source</a>.
+          <p className="mb-4">
+            <strong>BitPrint</strong> provides you an easy way to import your Bitwarden vault into a
+            layout which is designed to be printed. Processing is handled client side.
+          </p>
+          <p className="mb-4">
+            I would not trust using this for personal use. I made this for myself, more as of a
+            proof of concept than something meant to be shared. Always be cautious when dealing with
+            your exported vault.
           </p>
           <p className="mt-4">
             <strong className="font-bold">
-              It's highly recommended to clone the repo and run it yourself.
+              TL;DR: Do not import your personal vault on this site. Use the{' '}
+              <a className="font-bold" href="/?demo">
+                demo
+              </a>
+              .
             </strong>
           </p>
         </section>

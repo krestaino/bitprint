@@ -2,10 +2,14 @@
 
 ![Screenshot](.github/screenshot.png)
 
-**BitPrint** provides you an easy way to import your Bitwarden vault exports into a layout which is designed to be printed. Everything is handled in the browser, your data does not go anywhere.
-That said, I would not trust this without reviewing the source.
+**BitPrint** provides you an easy way to import your Bitwarden vault into a
+layout which is designed to be printed. Processing is handled client side.
 
-**It's highly recommended to clone the repo and run it yourself.**
+I would not trust using this for personal use. I made this for myself, more as of a
+proof of concept than something meant to be shared. Always be cautious when dealing with
+your exported vault.
+
+**TL;DR: Do not upload your personal vault on the demo site.**
 
 ## Demo
 

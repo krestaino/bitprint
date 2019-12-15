@@ -1,6 +1,6 @@
 {
   "name": "bitprint",
-  "description": "Print your Bitwarden exports.",
+  "description": "Print your Bitwarden vault.",
   "version": "1.3.0",
   "license": "MIT",
   "repository": {
