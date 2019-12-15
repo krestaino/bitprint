@@ -6,6 +6,10 @@ That said, I would not trust this if without reviewing the source.
 
 **It's highly recommended to clone the repo and run it yourself.**
 
+## Demo
+
+https://bitwarden-print.kmr.io/?demo
+
 ## Requirements
 
 - Node 10.x

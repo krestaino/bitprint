@@ -1,7 +1,12 @@
 {
   "name": "bitwarden-print",
+  "description": "Print your Bitwarden backups.",
   "version": "1.0.0",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krestaino/bitwarden-print.git"
+  },
   "scripts": {
     "format": "prettier --write '**/*.{css,js,json,md}'",
     "setup": "yarn install && node tasks/setup.js",
