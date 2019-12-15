@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import packageJson from '../../package.json';
 import Step1 from '../assets/step-1.png';
 import Step2 from '../assets/step-2.png';
 import Step3 from '../assets/step-3.png';
@@ -15,15 +16,12 @@ export default class Intro extends Component {
           <p>
             <strong>Bitwarden Print</strong> aims to provide a convenient format to print your
             Bitwarden backups. Everything is handled in the browser, your data does not go anywhere.
-            That said, I would not trust this without reviewing the <a href="/">source</a>.
+            That said, I would not trust this without reviewing the{' '}
+            <a href={packageJson.repository.url}>source</a>.
           </p>
           <p className="mt-4">
             <strong className="font-bold">
-              It's highly recommended to{' '}
-              <a className="font-bold" href="/">
-                clone the repo
-              </a>{' '}
-              and run it yourself.
+              It's highly recommended to clone the repo and run it yourself.
             </strong>
           </p>
         </section>
