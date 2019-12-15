@@ -176,10 +176,12 @@ export default class App extends Component {
             <div
               className={classNames({
                 hidden: file.size !== 0,
-                'flex justify-between': true
+                'flex justify-between items-center flex-col md:flex-row': true
               })}
             >
-              <h1 className="font-hairline text-3xl -mb-2 -m-1">Bitwarden Print</h1>
+              <h1 className="font-hairline text-2xl md:text-3xl mb-4 md:-mb-2 -m-1">
+                Bitwarden Print
+              </h1>
               <div className="flex items-center">
                 <span className="flex font-bold uppercase text-sm mr-4 slide-in-left">
                   Click to start… <ArrowLogo className="ml-2 h-5" />
@@ -199,9 +201,15 @@ export default class App extends Component {
                 {data.folders.length > 0 && (
                   <div className="xl:mt-auto">
                     <label className="label">Selected folders</label>
-                    <ul className="flex mr-8">
+                    <ul className="flex lg:mr-8 flex-wrap -mt-4 -mx-2 md:mx-0">
                       {data.folders.map(({ id, name }) => (
-                        <li className={foldersToPrint.includes(id) && '-active'} key={id}>
+                        <li
+                          className={classNames({
+                            'mt-4 w-half sm:w-auto px-2 md:px-0': true,
+                            '-active': foldersToPrint.includes(id)
+                          })}
+                          key={id}
+                        >
                           <input
                             checked={foldersToPrint.includes(id)}
                             className="hidden"
@@ -209,7 +217,7 @@ export default class App extends Component {
                             onChange={() => this.toggleFolder(id)}
                             type="checkbox"
                           />
-                          <label className="btn mr-4" htmlFor={id}>
+                          <label className="btn mr-4 w-full sm:w-auto" htmlFor={id}>
                             {name}
                           </label>
                         </li>
@@ -220,9 +228,15 @@ export default class App extends Component {
 
                 <div className="mt-4 xl:mt-auto">
                   <label className="label">Selected data</label>
-                  <ul className="flex">
+                  <ul className="flex flex-wrap -mt-4 -mx-2 md:mx-0">
                     {dataToPrintKeys.map(option => (
-                      <li className={dataToPrint[option] && '-active'} key={option}>
+                      <li
+                        className={classNames({
+                          'mt-4 w-half sm:w-auto px-2 md:px-0': true,
+                          '-active': dataToPrint[option]
+                        })}
+                        key={option}
+                      >
                         <input
                           checked={dataToPrint[option]}
                           className="hidden"
@@ -230,7 +244,7 @@ export default class App extends Component {
                           onChange={() => this.toggleDataOption(option)}
                           type="checkbox"
                         />
-                        <label className="btn mr-4" htmlFor={option}>
+                        <label className="btn mr-4 w-full sm:w-auto" htmlFor={option}>
                           {option}
                         </label>
                       </li>
@@ -244,7 +258,7 @@ export default class App extends Component {
                       {file.size > 0 && <label className="label">Selected backup</label>}
                       <div className="flex">
                         <span
-                          className="font-bold uppercase text-xs btn mr-4"
+                          className="font-bold uppercase text-xs btn mr-4 w-full"
                           style={{ cursor: 'not-allowed' }}
                         >
                           {`${file.name} (${(file.size / 1000).toFixed(1)} kB)`}

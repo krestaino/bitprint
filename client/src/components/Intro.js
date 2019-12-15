@@ -7,7 +7,7 @@ import Step3 from '../assets/step-3.png';
 export default class Intro extends Component {
   render() {
     return (
-      <div className="container my-8 mx-auto">
+      <div className="container my-4 md:my-8 mx-auto">
         <section className="mb-4 py-4">
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
             What is this?
@@ -39,8 +39,8 @@ export default class Intro extends Component {
           <h2 className="border-b border-gray-400 pb-1 mb-4 text-gray-600 font-bold text-sm uppercase">
             How do I get my backup?
           </h2>
-          <ol className="flex justify-center flex-wrap text-center -mt-8 flex-1 -mx-4">
-            <li className="mt-6 flex-1">
+          <ol className="flex flex-col md:flex-row justify-center flex-wrap text-center md:-mt-8 flex-1 -mx-4">
+            <li className="md:mt-6 flex-1">
               <div className="p-4">
                 <img alt="" className="rounded shadow-lg mx-auto" src={Step1} />
                 <h3 className="font-medium my-4">
@@ -48,7 +48,7 @@ export default class Intro extends Component {
                 </h3>
               </div>
             </li>
-            <li className="mt-6 flex-1">
+            <li className="md:mt-6 flex-1">
               <div className="p-4">
                 <img alt="" className="rounded shadow-lg mx-auto" src={Step2} />
                 <h3 className="font-medium my-4">
@@ -56,7 +56,7 @@ export default class Intro extends Component {
                 </h3>
               </div>
             </li>
-            <li className="mt-6 flex-1">
+            <li className="md:mt-6 flex-1">
               <div className="p-4">
                 <img alt="" className="rounded shadow-lg mx-auto" src={Step3} />
                 <div className="my-4">

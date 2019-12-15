@@ -63,7 +63,7 @@ li {
 }
 
 .btn {
-  @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs cursor-pointer overflow-hidden;
+  @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs cursor-pointer overflow-hidden justify-center;
 }
 
 .btn:hover {
@@ -94,6 +94,10 @@ li {
 
 .container {
   @apply mx-auto px-4;
+}
+
+.w-half {
+  width: 50%;
 }
 
 input[type='file'] {
