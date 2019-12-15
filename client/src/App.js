@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import csv from 'csvtojson';
 
 import packageJson from '../package.json';
+import { ReactComponent as FileImportIcon } from './assets/file-import.svg';
 import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as UndoLogo } from './assets/undo.svg';
@@ -184,12 +185,15 @@ export default class App extends Component {
                 <PrintIcon className="h-6 mr-2" />
                 <span>BitPrint</span>
               </h1>
-              <div className="flex items-center">
-                <span className="flex items-center font-bold uppercase text-sm mr-4 slide-in-left">
+              <div className="flex items-center font-bold uppercase text-sm">
+                <span className="flex items-center mr-4 slide-in-left">
                   Click to start <ArrowLogo className="ml-2 h-5" />
                 </span>
                 <div className="relative btn">
-                  <span className="font-bold uppercase text-xs">Select Export</span>
+                  <span className="flex items-center">
+                    <FileImportIcon className="h-4 mr-1" />
+                    Select Vault Export
+                  </span>
                   <input
                     className="opacity-0 absolute h-full w-full inset-0"
                     onChange={this.readFile}
