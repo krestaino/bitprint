@@ -16,7 +16,8 @@ export default class App extends Component {
     },
     error: null,
     foldersToPrint: [],
-    lastModified: null,
+    fileName: null,
+    fileLastModified: null,
     loading: true
   };
 
@@ -26,8 +27,8 @@ export default class App extends Component {
     return data.items.filter(item => foldersToPrint.includes(item.folderId)).length;
   };
 
-  formatDate(lastModified) {
-    const date = new Date(lastModified);
+  formatDate(fileLastModified) {
+    const date = new Date(fileLastModified);
     return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
   }
 
@@ -38,9 +39,10 @@ export default class App extends Component {
     reader.onload = event => {
       const data = JSON.parse(event.target.result);
       const foldersToPrint = data.folders.map(({ id }) => id);
-      const lastModified = this.formatDate(file.lastModified);
+      const fileLastModified = this.formatDate(file.lastModified);
+      const fileName = file.name;
 
-      this.setState({ data, foldersToPrint, lastModified });
+      this.setState({ data, fileLastModified, fileName, foldersToPrint });
     };
     reader.readAsText(file);
   };
@@ -61,46 +63,73 @@ export default class App extends Component {
   };
 
   render() {
-    const { dataToPrint, foldersToPrint, data, lastModified } = this.state;
+    const { dataToPrint, foldersToPrint, data, fileLastModified, fileName } = this.state;
 
     return (
-      <main>
-        <div className="bg-gray-900 no-print">
-          <div className="container mx-auto px-4 py-8 text-gray-100">
-            <input onChange={this.readFile} type="file" />
-            {data.folders.length > 0 && (
-              <div>
-                <h2>Data</h2>
-                <ul className="flex">
-                  {Object.keys(dataToPrint).map(option => (
-                    <li key={option}>
-                      <input
-                        id={option}
-                        type="checkbox"
-                        checked={dataToPrint[option]}
-                        onChange={() => this.toggleDataOption(option)}
-                      />
-                      <label for={option} className="capitalize">
-                        {option}
-                      </label>
-                    </li>
-                  ))}
-                </ul>
+      <main className="font-body">
+        <div className="bg-gray-900 no-print text-white">
+          <div className="container mx-auto px-4 py-8">
+            <div className="flex justify-between">
+              <h1 className="font-hairline text-3xl">Bitwarden Print</h1>
+              <div
+                className={classNames({
+                  active: fileName
+                })}
+              >
+                <div className="relative btn-blue">
+                  <button className="font-bold uppercase text-xs">
+                    {fileName || 'Select Backup'}
+                  </button>
+                  <input
+                    className="opacity-0 absolute h-full w-full inset-0"
+                    onChange={this.readFile}
+                    ref={this.fileInput}
+                    type="file"
+                  />
+                </div>
+              </div>
+            </div>
+            {data.items.length > 0 && (
+              <div className="flex mt-4">
+                <div>
+                  <label className="label">Select folders</label>
+                  <ul className="flex mr-8">
+                    {data.folders.map(({ id, name }) => (
+                      <li className={foldersToPrint.includes(id) && 'active'} key={id}>
+                        <input
+                          checked={foldersToPrint.includes(id)}
+                          className="hidden"
+                          id={id}
+                          onChange={() => this.toggleFolder(id)}
+                          type="checkbox"
+                        />
+                        <label className="btn-blue" htmlFor={id}>
+                          {name}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <h2>Folders</h2>
-                <ul className="flex">
-                  {data.folders.map(({ id, name }) => (
-                    <li key={id}>
-                      <input
-                        id={id}
-                        type="checkbox"
-                        checked={foldersToPrint.includes(id)}
-                        onChange={() => this.toggleFolder(id)}
-                      />
-                      <label for={id}>{name}</label>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <label className="label">Select data</label>
+                  <ul className="flex">
+                    {Object.keys(dataToPrint).map(option => (
+                      <li className={dataToPrint[option] && 'active'} key={option}>
+                        <input
+                          checked={dataToPrint[option]}
+                          className="hidden"
+                          id={option}
+                          onChange={() => this.toggleDataOption(option)}
+                          type="checkbox"
+                        />
+                        <label className="btn-blue" htmlFor={option}>
+                          {option}
+                        </label>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
           </div>
@@ -120,12 +149,14 @@ export default class App extends Component {
                       {Object.keys(dataToPrint).map(
                         option =>
                           dataToPrint[option] && (
-                            <span className="inline-block capitalize">{option}</span>
+                            <span className="inline-block capitalize" key={option}>
+                              {option}
+                            </span>
                           )
                       )}
                     </span>
                   </span>
-                  <span>{lastModified}</span>
+                  <span>{fileLastModified}</span>
                 </div>
               </div>
               <ul>
@@ -148,7 +179,7 @@ export default class App extends Component {
                             })}
                           >
                             <span className="text-gray-500">U – </span>
-                            <span>{login.username}</span>
+                            <span className="font-mono">{login.username}</span>
                           </div>
                         )}
                         {login.password && (
@@ -159,7 +190,7 @@ export default class App extends Component {
                             })}
                           >
                             <span className="text-gray-500">P – </span>
-                            <span>{login.password}</span>
+                            <span className="font-mono">{login.password}</span>
                           </div>
                         )}
                         {login.totp && (
@@ -170,7 +201,7 @@ export default class App extends Component {
                             })}
                           >
                             <span className="text-gray-500">T – </span>
-                            <span>{login.totp}</span>
+                            <span className="font-mono">{login.totp}</span>
                           </div>
                         )}
                         {notes && (
@@ -181,7 +212,7 @@ export default class App extends Component {
                             })}
                           >
                             <span className="text-gray-500">N – </span>
-                            <span>{notes}</span>
+                            <span className="font-mono">{notes}</span>
                           </div>
                         )}
                         {fields &&
@@ -194,7 +225,7 @@ export default class App extends Component {
                               key={index}
                             >
                               <span className="text-gray-500">{field.name} – </span>
-                              <span>{field.value}</span>
+                              <span className="font-mono">{field.value}</span>
                             </div>
                           ))}
                       </div>

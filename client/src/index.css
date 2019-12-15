@@ -16,3 +16,22 @@ li {
 .comma-list > *:not(:last-child)::after {
   content: ',\00a0';
 }
+
+.btn-blue {
+  @apply inline-flex bg-gray-100 text-gray-700 px-4 py-2 rounded font-bold uppercase text-xs mr-4;
+}
+
+.btn-blue:hover {
+  @apply bg-gray-300 text-gray-800;
+}
+.active .btn-blue {
+  @apply bg-blue-500 text-white;
+}
+
+.active .btn-blue:hover {
+  @apply bg-blue-600;
+}
+
+.label {
+  @apply uppercase text-xs mb-1 inline-block;
+}
