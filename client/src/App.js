@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+import { ReactComponent as UndoLogo } from './assets/undo.svg';
 import Intro from './components/Intro.js';
 
+const initialState = {
+  data: {
+    folders: [],
+    items: []
+  },
+  dataToPrint: {
+    logos: true,
+    username: true,
+    password: true,
+    totp: true,
+    notes: true,
+    fields: true
+  },
+  error: null,
+  file: {
+    name: '',
+    size: 0
+  },
+  foldersToPrint: [],
+  loading: true
+};
+
 export default class App extends Component {
-  state = {
-    data: {
-      folders: [],
-      items: []
-    },
-    dataToPrint: {
-      logos: true,
-      username: true,
-      password: true,
-      totp: true,
-      notes: true,
-      fields: true
-    },
-    error: null,
-    file: {
-      name: '',
-      size: 0
-    },
-    foldersToPrint: [],
-    loading: true
-  };
+  state = { ...initialState };
 
   demoData = async () => {
     const response = await fetch('/example.json');
@@ -93,35 +96,50 @@ export default class App extends Component {
 
     return (
       <main className="font-body">
-        <div className="bg-gray-900 no-print text-white">
+        <div className="bg-gray-900 no-print text-white sticky top-0">
           <div className="container py-8 relative">
             <div className="flex justify-between">
-              <h1 className="font-hairline text-3xl">Bitwarden Print</h1>
-              <div
+              <h1
                 className={classNames({
-                  'absolute bottom-0 right-0': true,
-                  active: file.name
+                  hidden: file.size !== 0,
+                  'font-hairline text-3xl -mb-2': true
                 })}
               >
-                <div className="relative mb-8 right-0 btn-blue">
-                  <button className="font-bold uppercase text-xs">
-                    {(file.name && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
-                      'Select Backup'}
-                  </button>
-                  <input
-                    className="opacity-0 absolute h-full w-full inset-0"
-                    onChange={this.readFile}
-                    ref={this.fileInput}
-                    type="file"
-                  />
+                Bitwarden Print
+              </h1>
+              <div className="absolute bottom-0 right-0 flex flex-col">
+                {file.size > 0 && <label className="label">Selected backup</label>}
+                <div className="mb-8 flex">
+                  <div
+                    className={classNames({
+                      active: file.name
+                    })}
+                  >
+                    <div className="relative btn-blue">
+                      <button className="font-bold uppercase text-xs">
+                        {(file.name && `${file.name} (${(file.size / 1000).toFixed(1)} kB)`) ||
+                          'Select Backup'}
+                      </button>
+                      <input
+                        className="opacity-0 absolute h-full w-full inset-0"
+                        onChange={this.readFile}
+                        type="file"
+                      />
+                    </div>
+                  </div>
+                  {file.name && (
+                    <button className="btn-blue" onClick={() => this.setState({ ...initialState })}>
+                      <UndoLogo className="h-4" />
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
             {data.items.length > 0 && (
-              <div className="flex mt-4">
+              <div className="flex">
                 {data.folders.length > 0 && (
                   <div>
-                    <label className="label">Select folders</label>
+                    <label className="label">Selected folders</label>
                     <ul className="flex mr-8">
                       {data.folders.map(({ id, name }) => (
                         <li className={foldersToPrint.includes(id) && 'active'} key={id}>
@@ -142,7 +160,7 @@ export default class App extends Component {
                 )}
 
                 <div>
-                  <label className="label">Select data</label>
+                  <label className="label">Selected data</label>
                   <ul className="flex">
                     {Object.keys(dataToPrint).map(option => (
                       <li className={dataToPrint[option] && 'active'} key={option}>
@@ -164,7 +182,7 @@ export default class App extends Component {
             )}
           </div>
         </div>
-        <Intro />
+        {file.size === 0 && <Intro />}
         <section className="container my-8 text-gray-700">
           {data.items.length > 0 && (
             <div>
