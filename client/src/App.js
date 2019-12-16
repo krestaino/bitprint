@@ -165,7 +165,7 @@ export default class App extends Component {
 
     return (
       <main className="font-body leading-relaxed h-screen flex flex-col">
-        <div className="bg-gray-900 no-print text-white sticky top-0 py-6 xl:h-24">
+        <div className="bg-gray-900 no-print text-white py-6 xl:h-24">
           <div className="container relative h-full flex items-center w-full">
             <div
               className={classNames({

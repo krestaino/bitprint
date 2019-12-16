@@ -74,7 +74,14 @@
   animation: 1s 0s 1 slideInBottom;
 }
 
+.bg-gray-900.no-print {
+  transition: 0.3s;
+}
+
 @media (max-height: 500px) {
+  .bg-gray-900.no-print {
+    @apply -mt-48;
+  }
   .btn.-rounded.-lg {
     display: none !important;
   }
