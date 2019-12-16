@@ -1,6 +1,6 @@
 # BitPrint
 
-**BitPrint** turns an [exported Bitwarden vault](https://help.bitwarden.com/article/export-your-data/) into a layout which is designed to be printed. Processing is handled client side.
+**BitPrint** turns an [exported Bitwarden vault](https://help.bitwarden.com/article/export-your-data/) into a layout designed to be printed. Processing is handled client side.
 
 I would not recommend using this for personal use. I made this for myself, more as of a proof of concept rather than something meant to be shared. Always be cautious when dealing with your exported vault.
 

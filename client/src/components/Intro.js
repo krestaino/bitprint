@@ -23,7 +23,7 @@ export default class Intro extends Component {
             >
               exported Bitwarden vault
             </a>{' '}
-            into a layout which is designed to be printed. Processing is handled client side.
+            into a layout designed to be printed. Processing is handled client side.
           </p>
           <p className="mb-4">
             I would not recommend using this for personal use. I made this for myself, more as of a

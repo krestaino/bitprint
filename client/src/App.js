@@ -39,6 +39,7 @@ export default class App extends Component {
     const response = await fetch('/demo.json');
     const data = await response.json();
     const foldersToPrint = data.folders.map(({ id }) => id);
+
     const file = {
       name: 'demo.json',
       lastModified: 1576401686010,
