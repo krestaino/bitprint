@@ -10,9 +10,9 @@ I would not recommend using this for personal use. I made this for myself, more 
 
 ## Demo
 
-- https://bitprint.kmr.io/?demo (start here)
-- https://bitprint.kmr.io/demo.json (vault export)
-- https://bitprint.kmr.io/demo.pdf (pdf to print)
+- [bitprint.kmr.io/?demo](https://bitprint.kmr.io/?demo) (start here)
+- [bitprint.kmr.io/demo.json](https://bitprint.kmr.io/demo.json) (vault export)
+- [bitprint.kmr.io/demo.pdf](https://bitprint.kmr.io/demo.pdf) (pdf to print)
 
 ## Requirements
 
@@ -78,4 +78,4 @@ $ yarn serve
 
 ## How do I get my vault export?
 
-https://help.bitwarden.com/article/export-your-data/
+[help.bitwarden.com/article/export-your-data/](https://help.bitwarden.com/article/export-your-data/)
