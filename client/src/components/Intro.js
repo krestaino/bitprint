@@ -6,8 +6,7 @@ import Step3 from '../assets/step-3.png';
 
 export default class Intro extends Component {
   render() {
-    const pdfHref = window.location.origin + '/demo.pdf';
-    const jsonHref = window.location.origin + '/demo.json';
+    const host = window.location.host;
 
     return (
       <div className="container my-4 md:my-8 mx-auto">
@@ -47,20 +46,20 @@ export default class Intro extends Component {
           </h2>
           <ul className="list-disc ml-4">
             <li>
-              <a className="inline-block" href="?demo">
-                {window.location.origin}/?demo
+              <a className="inline-block" href={'//' + host + '/?demo'}>
+                {host}/?demo
               </a>
               <span> (start here)</span>
             </li>
             <li>
-              <a className="inline-block" href={jsonHref}>
-                {jsonHref}
+              <a className="inline-block" href={'//' + host + '/demo.json'}>
+                {host + '/demo.json'}
               </a>
               <span> (vault export)</span>
             </li>
             <li>
-              <a className="inline-block" href={pdfHref}>
-                {pdfHref}
+              <a className="inline-block" href={'//' + host + '/demo.pdf'}>
+                {host + '/demo.pdf'}
               </a>
               <span> (pdf to print)</span>
             </li>
@@ -78,7 +77,7 @@ export default class Intro extends Component {
                 target="_blank"
                 href="https://help.bitwarden.com/article/export-your-data/"
               >
-                https://help.bitwarden.com/article/export-your-data/
+                help.bitwarden.com/article/export-your-data/
               </a>
             </li>
           </ul>
