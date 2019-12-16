@@ -165,7 +165,7 @@ export default class App extends Component {
     const dataToPrintKeys = Object.keys(dataToPrint);
 
     return (
-      <main className="font-body leading-relaxed h-screen flex flex-col">
+      <main className="font-body leading-relaxed min-h-screen flex flex-col">
         <div className="bg-gray-900 no-print text-white py-6 xl:h-24">
           <div className="container relative h-full flex items-center w-full">
             <div
