@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 
+import Context from '../context/index.js';
+
 import Step1 from '../assets/step-1.png';
 import Step2 from '../assets/step-2.png';
 import Step3 from '../assets/step-3.png';
 
 export default class Intro extends Component {
+  static contextType = Context;
+
   render() {
     const host = window.location.host;
+
+    if (this.context.file.size !== 0) {
+      return false;
+    }
 
     return (
       <div className="container my-4 md:my-8 mx-auto">
