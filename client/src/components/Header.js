@@ -12,6 +12,15 @@ import { ReactComponent as TrashIcon } from '../assets/trash.svg';
 export default class Header extends Component {
   static contextType = Context;
 
+  toggleFolder = id => {
+    const foldersToPrint = [...this.context.foldersToPrint];
+    const index = foldersToPrint.indexOf(id);
+
+    foldersToPrint.includes(id) ? foldersToPrint.splice(index, 1) : foldersToPrint.push(id);
+
+    this.context.setContext({ foldersToPrint });
+  };
+
   readFile = event => {
     const reader = new FileReader();
     const file = event.target.files[0];

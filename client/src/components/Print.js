@@ -36,15 +36,6 @@ export default class Print extends Component {
     }
   };
 
-  toggleFolder = id => {
-    const foldersToPrint = [...this.context.foldersToPrint];
-    const index = foldersToPrint.indexOf(id);
-
-    foldersToPrint.includes(id) ? foldersToPrint.splice(index, 1) : foldersToPrint.push(id);
-
-    this.context.setContext({ foldersToPrint });
-  };
-
   render() {
     const { dataToPrint, foldersToPrint, data, file } = this.context;
     const dataToPrintKeys = Object.keys(dataToPrint);
