@@ -8,6 +8,8 @@ import { ReactComponent as FileImportIcon } from './assets/file-import.svg';
 import { ReactComponent as PrintIcon } from './assets/print.svg';
 import { ReactComponent as ArrowLogo } from './assets/arrow.svg';
 import { ReactComponent as TrashIcon } from './assets/trash.svg';
+
+import Logo from './components/Logo.js';
 import Intro from './components/Intro.js';
 
 const initialState = {
@@ -373,14 +375,13 @@ export default class App extends Component {
                     >
                       <div className="px-4 py-2 font-bold flex items-center">
                         {login.uris && (
-                          <img
+                          <Logo
                             alt={name}
                             className={classNames({
                               hidden: !dataToPrint['logos'],
-                              'inline-block mr-2 h-5 w-5': true
+                              'inline-block mr-2 h-5 w-5 text-blue-500': true
                             })}
                             src={`https://icons.bitwarden.net/${this.getHostName(login)}/icon.png`}
-                            style={{ textIndent: '-9999px' }}
                           />
                         )}
                         <span>{name}</span>
