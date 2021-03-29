@@ -14,6 +14,13 @@ I would not recommend using this for personal use. I made this for myself, more 
 - [bitprint.kmr.io/demo.json](https://bitprint.kmr.io/demo.json) (vault export)
 - [bitprint.kmr.io/demo.pdf](https://bitprint.kmr.io/demo.pdf) (pdf to print)
 
+## Docker Quick Start
+```
+docker build -t bitprintimage .
+docker run --name bitprintcontainer -p 3000:3000 bitprintimage
+```
+Open `localhost:3000` in your webbrowser
+
 ## Requirements
 
 - Node 10.x
