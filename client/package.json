@@ -33,7 +33,7 @@
     "csvtojson": "^2.0.10",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0",
+    "react-scripts": "^5.0.1",
     "serve-handler": "^6.1.2",
     "tailwindcss": "^1.1.3"
   },
